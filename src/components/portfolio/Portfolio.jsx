@@ -16,8 +16,8 @@ export default function Portfolio() {
   const [data, setData] = useState([])
   const list = [
     {
-      id: "featured",
-      title: "Featured",
+      id: "snacks",
+      title: "Snacks",
     },
     {
       id: "web",
@@ -32,7 +32,7 @@ export default function Portfolio() {
       title: "Design",
     },
     {
-      id: "Content",
+      id: "content",
       title: "content",
     },
   ]
