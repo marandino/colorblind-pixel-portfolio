@@ -11,12 +11,12 @@
         padding-bottom: 50px;
         overflow: hidden;
         @include mobile{
+            padding-bottom: 10px;
             font-size: 20px;
         }
     }
 
     ul{
-        margin: 10px;
         padding: 0;
         list-style: none;
         display: flex;

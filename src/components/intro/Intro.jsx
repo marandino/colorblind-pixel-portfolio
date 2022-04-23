@@ -11,7 +11,7 @@ export default function Intro() {
       showCursor: true,
       backDelay: 1500,
       backSpeed: 60,
-      strings: ["Artist", "Developer"],
+      strings: ["Pixel Art", "Anime", "Pixel Art Animation"],
     });
   }, []);
 
@@ -27,7 +27,7 @@ export default function Intro() {
           <h2>Hi There, I'm</h2>
           <h1>Zhou Zheng</h1>
           <h3>
-            PixelArt <span ref={textRef}></span>
+            <span ref={textRef}></span>
           </h3>
           <div className="socialMediaLogos">
             <SocialMediaIcon
