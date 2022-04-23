@@ -35,7 +35,24 @@ export const featuredPortfolio = [
       img:
         "art/Snacks/FrescoLeche.png",
     },
-
+    {
+      id: 7,
+      title: "Hi C",
+      img:
+        "art/Snacks/hic .png",
+    },
+    {
+      id: 8,
+      title: "Horpacha",
+      img:
+        "art/Snacks/horpacha.png",
+    },
+    {
+      id: 9,
+      title: "Maruchan",
+      img:
+        "art/Snacks/maruchan.png",
+    },
   ];
   
   export const webPortfolio = [

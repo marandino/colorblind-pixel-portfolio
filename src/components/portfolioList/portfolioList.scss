@@ -3,9 +3,14 @@
 .portfolioList {
   font-size: 14px;
   margin-right: 50px;
-  padding: 7px;
+  padding: 20px;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  overflow: hidden;
+
 
   @include mobile{
     margin-right: 20px;
