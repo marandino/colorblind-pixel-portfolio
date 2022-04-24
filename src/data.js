@@ -1,206 +1,188 @@
-export const featuredPortfolio = [
-    {
-      id: 1,
-      title: "Estrella Fugaz",
-      img:
-        "art/Snacks/EstrellaFugaz.png",
-    },
-    {
-      id: 2,
-      title: "Choco QuQi",
-      img:
-        "art/Snacks/cuqui.png",
-    },
-    {
-      id: 3,
-      title: "Fresco en bolsa",
-      img:
-        "art/Snacks/bolsas de fresco.png",
-    },
-    {
-      id: 4,
-      title: "Paleta payaso",
-      img:
-        "art/Snacks/clownpaleta.png",
-    },
-    {
-      id: 5,
-      title: "Confite",
-      img:
-        "art/Snacks/confite.png",
-    },
-    {
-      id: 6,
-      title: "Fresco Leche",
-      img:
-        "art/Snacks/FrescoLeche.png",
-    },
-    {
-      id: 7,
-      title: "Hi C",
-      img:
-        "art/Snacks/hic .png",
-    },
-    {
-      id: 8,
-      title: "Horpacha",
-      img:
-        "art/Snacks/horpacha.png",
-    },
-    {
-      id: 9,
-      title: "Maruchan",
-      img:
-        "art/Snacks/maruchan.png",
-    },
-  ];
-  
-  export const webPortfolio = [
-    {
-      id: 1,
-      title: "Web Social Media App",
-      img: "https://cdn.dribbble.com/users/5031392/screenshots/15467520/media/c36b3b15b25b1e190d081abdbbf947cf.png?compress=1&resize=1200x900",
-    },
-    {
-      id: 2,
-      title: "Web Rampa UI Design",
-      img: "https://cdn.dribbble.com/users/3967258/screenshots/15463803/media/4fddb9a2caf3b3bd634060f706a91e73.png?compress=1&resize=1200x900",
-    },
-    {
-      id: 3,
-      title: "Web E-commerce Design",
-      img: "https://cdn.dribbble.com/users/3637068/screenshots/15467010/media/69a3279182b75365013fe285733d1122.png?compress=1&resize=1200x900",
-    },
-    {
-      id: 4,
-      title: "Web Relax App",
-      img: "https://cdn.dribbble.com/users/2264844/screenshots/15463998/media/d85e92a332c41094f68e1f716884f7ce.jpg?compress=1&resize=1200x900",
-    },
-    {
-      id: 5,
-      title: "Web Design",
-      img: "https://cdn.dribbble.com/users/387658/screenshots/15458608/media/e92ec1dd33dd1170ae3dc9c5272f2693.jpg?compress=1&resize=1200x900",
-    },
-    {
-      id: 6,
-      title: "Web Banking App",
-      img: "https://cdn.dribbble.com/users/6384483/screenshots/15468426/media/ce9479fa1f8dba3a4a49840d76e55e31.png?compress=1&resize=1200x900",
-    },
-  ];
-  
-  export const mobilePortfolio = [
-    {
-      id: 1,
-      title: "Mobile Social Media App",
-      img:
-        "https://cdn.dribbble.com/users/2597268/screenshots/15468893/media/44313553d73ba41580f1df69749bba28.jpg?compress=1&resize=1200x900",
-    },
-    {
-      id: 2,
-      title: "Mobile Rampa UI Design",
-      img:
-        "https://cdn.dribbble.com/users/5920881/screenshots/15463142/media/b5a460223798bd85d835710806e2f3dd.png?compress=1&resize=1200x900",
-    },
-    {
-      id: 3,
-      title: "Mobile E-commerce Design",
-      img:
-        "https://cdn.dribbble.com/users/1998175/screenshots/15459384/media/48ac2b43ebe81ba0866afea1383cc939.png?compress=1&resize=1200x900",
-    },
-    {
-      id: 4,
-      title: "Mobile Relax App",
-      img:
-        "https://cdn.dribbble.com/users/2083704/screenshots/15468619/media/cd958306c7a772449e1ac23bd65ce506.png?compress=1&resize=1200x900",
-    },
-    {
-      id: 5,
-      title: "Mobile Hero Design",
-      img:
-        "https://cdn.dribbble.com/users/26642/screenshots/15462545/media/1a202ef5c8338b6f78634e6edc1ba350.png?compress=1&resize=1200x900",
-    },
-    {
-      id: 6,
-      title: "Mobile Banking App",
-      img:
-        "https://cdn.dribbble.com/users/1387827/screenshots/15466426/media/deb2dca6762cd3610321c98bfccb0b72.png?compress=1&resize=1200x900",
-    },
-  ];
-  
-  export const designPortfolio = [
-    {
-      id: 1,
-      title: "Design Social Media App",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-    {
-      id: 2,
-      title: "Design Rampa UI Design",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-    {
-      id: 3,
-      title: "Design E-commerce Web Design",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-    {
-      id: 4,
-      title: "Design Relax Mobile App",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-    {
-      id: 5,
-      title: "Design Keser Web Design",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-    {
-      id: 6,
-      title: "Design Banking App",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-  ];
-  
-  export const contentPortfolio = [
-    {
-      id: 1,
-      title: "Content Social Media App",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-    {
-      id: 2,
-      title: "Content Rampa UI Design",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-    {
-      id: 3,
-      title: "Content E-commerce Web Design",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-    {
-      id: 4,
-      title: "Content Relax Mobile App",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-    {
-      id: 5,
-      title: "Content Keser Web Design",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-    {
-      id: 6,
-      title: "Content Banking App",
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-    },
-  ];
+export const snacks = [
+  {
+    id: 1,
+    title: "Estrella Fugaz",
+    img: "art/Snacks/EstrellaFugaz.png",
+  },
+  {
+    id: 2,
+    title: "Choco QuQi",
+    img: "art/Snacks/cuqui.png",
+  },
+  {
+    id: 3,
+    title: "Fresco en bolsa",
+    img: "art/Snacks/bolsas de fresco.png",
+  },
+  {
+    id: 4,
+    title: "Paleta payaso",
+    img: "art/Snacks/clownpaleta.png",
+  },
+  {
+    id: 5,
+    title: "Confite",
+    img: "art/Snacks/confite.png",
+  },
+  {
+    id: 6,
+    title: "Fresco Leche",
+    img: "art/Snacks/FrescoLeche.png",
+  },
+  {
+    id: 7,
+    title: "Hi C",
+    img: "art/Snacks/hic .png",
+  },
+  {
+    id: 8,
+    title: "Horpacha",
+    img: "art/Snacks/horpacha.png",
+  },
+  {
+    id: 9,
+    title: "Maruchan",
+    img: "art/Snacks/maruchan.png",
+  },
+  {
+    id: 9,
+    title: "Limon",
+    img: "art/Snacks/limon real.png",
+  },
+  {
+    id: 10,
+    title: "Rompope",
+    img: "art/Snacks/rompope.png",
+  },
+  {
+    id: 11,
+    title: "Tamal",
+    img: "art/Snacks/tamal.png",
+  },
+];
+
+export const places = [
+  {
+    id: 1,
+    title: "AmPm",
+    img: "art/Places/ampmnNoche.png",
+  },
+  {
+    id: 2,
+    title: "Buildings",
+    img: "art/Places/BuildingsPractice.png",
+  },
+  {
+    id: 3,
+    title: "Contraloria",
+    img: "art/Places/contraloria.png",
+  },
+  {
+    id: 4,
+    title: "Garantias Sociales",
+    img: "art/Places/garantias.png",
+  },
+  {
+    id: 5,
+    title: "Faro",
+    img: "art/Places/faro.png",
+  },
+  {
+    id: 6,
+    title: "Ermita",
+    img: "art/Places/hermita.png",
+  },
+  {
+    id: 7,
+    title: "Hogwarts",
+    img: "art/Places/hogwarts.png",
+  },
+  {
+    id: 8,
+    title: "Iglesia de Liberia",
+    img: "art/Places/IGLESIA_LIBERIA_DAY.png",
+  },
+  {
+    id: 9,
+    title: "La Pension",
+    img: "art/Places/pension casa.png",
+  },
+  {
+    id: 10,
+    title: "Pollo Granjero",
+    img: "art/Places/pollogranjero.png",
+  },
+  {
+    id: 11,
+    title: "Vaquita Taxi",
+    img: "art/Places/vaquitaTaxi.png",
+  },
+  {
+    id: 12,
+    title: "Vaquita Techo",
+    img: "art/Places/vacaTecho.png",
+  },
+];
+
+export const anime = [
+  {
+    id: 1,
+    title: "Akira Male",
+    img: "art/Anime/akira male.png",
+  },
+  {
+    id: 2,
+    title: "Akira Female",
+    img: "art/Anime/akira.png",
+  },
+  {
+    id: 3,
+    title: "Vi Arcane",
+    img: "art/Anime/vi.png",
+  },
+  {
+    id: 4,
+    title: "Cloud",
+    img: "art/Anime/cloud.png",
+  },
+  {
+    id: 5,
+    title: "Emma Sekiro",
+    img: "art/Anime/emma.png",
+  },
+  {
+    id: 6,
+    title: "Mirio",
+    img: "art/Anime/mirio.png",
+  },
+  {
+    id: 7,
+    title: "Nikaido",
+    img: "art/Anime/nikaido.png",
+  },
+  {
+    id: 8,
+    title: "Sage Valorant",
+    img: "art/Anime/Sage.png",
+  },
+  {
+    id: 9,
+    title: "Shirou",
+    img: "art/Anime/shirou.png",
+  },
+  {
+    id: 10,
+    title: "Tanjiro",
+    img: "art/Anime/tanjiro.png",
+  },
+  {
+    id: 11,
+    title: "Todoroki",
+    img: "art/Anime/todoroki.png",
+  },
+  {
+    id: 12,
+    title: "Clementine",
+    img: "art/Anime/clementine.png",
+  },
+];
