@@ -4,10 +4,13 @@ import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
 import { useState, useEffect } from "react";
 import { snacks, places, anime } from "../../data";
-
+import { Lightbox } from "react-modal-image-react-17";
 export default function Portfolio() {
   const [selected, setSelected] = useState("featured");
   const [data, setData] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [image, setImage] = useState("");
+
   const list = [
     {
       id: "snacks",
@@ -55,10 +58,24 @@ export default function Portfolio() {
       <div className="container">
         {data.map((d) => (
           <div className="item">
-            <img img src={d.img} alt="" />
+            <img
+              src={d.img}
+              alt=""
+              onClick={() => {
+                setOpen(true);
+                setImage(d.img);
+              }}
+            />
             <h3>{d.title}</h3>
           </div>
         ))}
+        {open && (
+          <Lightbox
+            medium={image}
+            onClose={() => setOpen(false)}
+            hideDownload={true}
+          />
+        )}
       </div>
     </div>
   );
