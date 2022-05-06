@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="app">
       <title>Colorblind Pixel</title>
-      <link rel="shortcut icon" href="assets/zhoulogot.ico" />
+      <link rel="shortcut icon" href="assets/zhoulogot.png" />
       <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className="sections">
