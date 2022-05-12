@@ -1,8 +1,12 @@
 @import "global.scss";
 .app{
+    padding: 0;
+    margin: 0;
     height: 100vh;
     .sections{
-        width: 100%;
+        padding: 0;
+        margin: 0;
+        width: 100vw;
         height: calc(100vh - 70px);
         background-color: lightsalmon;
         position: relative;
@@ -17,10 +21,15 @@
         > *{
             width: 100vw;
             height: calc(100vh - 70px);
-            @include mobile{
-                height: calc(100vh - 80px);
-            }
             scroll-snap-align: start;
+        }
+
+        @include mobile{
+            > *{
+                width: 100vw;
+                height: calc(100vh - 70px);
+                scroll-snap-align: none;
+            }
         }
     }
 }
