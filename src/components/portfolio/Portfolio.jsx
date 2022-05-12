@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { snacks, places, anime } from "../../data";
 import { Lightbox } from "react-modal-image-react-17";
 export default function Portfolio() {
-  const [selected, setSelected] = useState("featured");
+  const [selected, setSelected] = useState("snacks");
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState("");
