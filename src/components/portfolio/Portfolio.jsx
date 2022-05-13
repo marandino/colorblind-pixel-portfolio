@@ -3,13 +3,15 @@
 import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
 import { useState, useEffect } from "react";
-import { snacks, places, anime } from "../../data";
+import { snacks, places, anime, freeWallpaper } from "../../data";
 import { Lightbox } from "react-modal-image-react-17";
+
 export default function Portfolio() {
   const [selected, setSelected] = useState("snacks");
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState("");
+  const [download, setDownload] = useState(true);
 
   const list = [
     {
@@ -24,6 +26,10 @@ export default function Portfolio() {
       id: "anime",
       title: "Anime",
     },
+    {
+      id: "free",
+      title: "FREE WALLPAPER"
+    },
   ];
 
   useEffect(() => {
@@ -36,6 +42,9 @@ export default function Portfolio() {
         break;
       case "anime":
         setData(anime);
+        break;
+      case "free":
+        setData(freeWallpaper);
         break;
       default:
         setData(snacks);
@@ -64,16 +73,24 @@ export default function Portfolio() {
               onClick={() => {
                 setOpen(true);
                 setImage(d.img);
+                if (selected === "free") {
+                  setDownload(false);
+                } else {
+                  setDownload(true);
+                }
               }}
             />
-            <h3>{d.title}</h3>
+            <h3 onClick={() => {
+              setOpen(true);
+              setImage(d.img);
+            }}>{d.title}</h3>
           </div>
         ))}
         {open && (
           <Lightbox
             medium={image}
             onClose={() => setOpen(false)}
-            hideDownload={true}
+            hideDownload={download}
           />
         )}
       </div>

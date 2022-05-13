@@ -1,3 +1,31 @@
+export const freeWallpaper = [
+  {
+    id: 1,
+    title: "Chepe",
+    img: "art/FreeWallpaper/Chepe.PNG",
+  },
+  {
+    id: 2,
+    title: "City Day",
+    img: "art/FreeWallpaper/dayIphone.png",
+  },
+  {
+    id: 3,
+    title: "City Night",
+    img: "art/FreeWallpaper/nightIphone.png",
+  },
+  {
+    id: 4,
+    title: "Watermelon Lolipop",
+    img: "art/FreeWallpaper/sandia.PNG",
+  },
+  {
+    id: 5,
+    title: "Estrella Fugaz",
+    img: "art/FreeWallpaper/starwallpaper.PNG",
+  },
+]
+
 export const snacks = [
   {
     id: 1,
