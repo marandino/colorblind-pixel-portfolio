@@ -1,6 +1,6 @@
 $mainColor: #000000;
 
-$width: 768px;
+$width: 900px;
 
 @mixin mobile {
     @media (max-width: #{$width}) {
