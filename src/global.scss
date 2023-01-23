@@ -1,9 +1,15 @@
 $mainColor: #000000;
 
-$width: 900px;
-
+$widthMobile: 900px;
+$widthUW: 2000px;
 @mixin mobile {
-    @media (max-width: #{$width}) {
+    @media (max-width: #{$widthMobile}) {
+        @content
+    }
+}
+
+@mixin ultrawide {
+    @media (min-width: #{$widthUW}) {
         @content
     }
 }
