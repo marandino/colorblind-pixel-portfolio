@@ -40,7 +40,7 @@ export default function Intro() {
             />
             <SocialMediaIcon
               socialMedia={"fa-twitter"}
-              URL={"https://twitter.com/ZhouAdventure"}
+              URL={"https://twitter.com/ColorblindPixl"}
             />
           </div>
         </div>
