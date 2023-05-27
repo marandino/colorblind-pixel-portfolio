@@ -11,7 +11,7 @@ export default function Intro() {
       showCursor: true,
       backDelay: 1500,
       backSpeed: 60,
-      strings: ["Pixel Art", "Anime", "Pixel Art Animation"],
+      strings: ["Pixel Art", "Pixel Art Logos", "Pixel Art Animation"],
     });
   }, []);
 
@@ -19,13 +19,13 @@ export default function Intro() {
     <div className="intro" id="intro">
       <div className="left">
         <div className="imgContainer">
-          <img src="assets/zhoulogo.png" alt="" />
+          <img src="assets/cevicheriaMagikarp.png" alt="" />
         </div>
       </div>
       <div className="right">
         <div className="wrapper">
           <h2>Hi There, I'm</h2>
-          <h1>Zhou Zheng</h1>
+          <h1>Colorblind Pixel</h1>
           <h3>
             <span ref={textRef}></span>
           </h3>

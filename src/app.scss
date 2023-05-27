@@ -1,32 +1,44 @@
 @import "global.scss";
-.app{
+.app {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+
+  .sections {
     padding: 0;
     margin: 0;
-    height: 100vh;
-    .sections{
-        padding: 0;
-        margin: 0;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    position: relative;
+    top: 70px;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; //for firefox
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > * {
+      width: 100vw;
+      height: calc(100vh - 70px);
+    }
+
+    .intro {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .portfolio {
+      position: relative;
+      z-index: 2;
+    }
+
+    @include mobile {
+      > * {
         width: 100vw;
         height: calc(100vh - 70px);
-        position: relative;
-        top: 70px;
-        scroll-behavior: smooth;
-        scroll-snap-type: y mandatory;
-        scrollbar-width: none; //for firefox
-        &::-webkit-scrollbar{
-            display: none;
-        }
-
-        > *{
-            width: 100vw;
-            height: calc(100vh - 70px);
-        }
-
-        @include mobile{
-            > *{
-                width: 100vw;
-                height: calc(100vh - 70px);
-            }
-        }
+      }
     }
+  }
 }
