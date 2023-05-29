@@ -5,7 +5,7 @@ import "./portfolio.scss";
 import { useState, useEffect } from "react";
 import { Lightbox } from "react-modal-image-react-17";
 
-import { collection, addDoc, serverTimestamp, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import {db} from '../../firebase';
 
 export default function Portfolio() {
