@@ -1,10 +1,12 @@
 /* eslint-disable no-duplicate-case */
 /* eslint-disable default-case */
-import PortfolioList from "../portfolioList/PortfolioList";
+import PortfolioList from "../portfolioTabs/PortfolioTabs";
 import "./portfolio.scss";
 import { useState, useEffect } from "react";
-import { snacks, places, anime, freeWallpaper } from "../../data";
 import { Lightbox } from "react-modal-image-react-17";
+
+import { collection, addDoc, serverTimestamp, getDocs } from "firebase/firestore";
+import {db} from '../../firebase';
 
 export default function Portfolio() {
   const [selected, setSelected] = useState("snacks");
@@ -12,6 +14,18 @@ export default function Portfolio() {
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState("");
   const [download, setDownload] = useState(true);
+
+  const fetchPost = async () => {
+       
+    await getDocs(collection(db, "PortfolioArt"))
+        .then((querySnapshot)=>{               
+            const newData = querySnapshot.docs
+                .map((doc) => ({...doc.data(), id:doc.url }));
+            setData(newData);                
+            console.log(data, newData);
+        })
+   
+}
 
   const list = [
     {
@@ -35,19 +49,19 @@ export default function Portfolio() {
   useEffect(() => {
     switch (selected) {
       case "snacks":
-        setData(snacks);
+        fetchPost();
         break;
       case "places":
-        setData(places);
+        fetchPost();
         break;
       case "anime":
-        setData(anime);
+        fetchPost();
         break;
       case "free":
-        setData(freeWallpaper);
+        fetchPost();
         break;
       default:
-        setData(snacks);
+        fetchPost();
     }
   }, [selected]);
 
@@ -68,22 +82,19 @@ export default function Portfolio() {
         {data.map((d) => (
           <div className="item">
             <img
-              src={d.img}
+              src={d.URL}
               alt=""
               onClick={() => {
                 setOpen(true);
-                setImage(d.img);
-                if (selected === "free") {
-                  setDownload(false);
-                } else {
-                  setDownload(true);
-                }
+                setImage(d.URL)
+                setDownload(selected !== "free");
               }}
             />
             <h3 onClick={() => {
               setOpen(true);
-              setImage(d.img);
-            }}>{d.title}</h3>
+              setImage(d.URL);
+              console.log(image)
+            }}>{d.Name}</h3>
           </div>
         ))}
         {open && (

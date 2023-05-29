@@ -4,7 +4,7 @@ import "./icon.scss";
 export default function Intro({ socialMedia, URL }) {
   return (
     <div className="icon" id="icon">
-      <a href={URL} class={"fa " + socialMedia}></a>
+      <a href={URL} className={"fa " + socialMedia}></a>
     </div>
   );
 }

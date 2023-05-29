@@ -27,7 +27,7 @@
         @include mobile{
             flex-wrap: wrap;
             justify-content: center;
-            padding-bottom: 10px; 
+            padding-bottom: 50px; 
         }
     }
 
@@ -58,11 +58,11 @@
             cursor: pointer;
 
             @include mobile{
-                margin: 0px;
+                margin: 10px;
                 padding: 0px;
-                width: 8em;
-                height: 8em;
-                border-radius: 0px;
+                width: 10em;
+                height: 10em;
+                border-radius: 20px;
             }
 
             h3{
