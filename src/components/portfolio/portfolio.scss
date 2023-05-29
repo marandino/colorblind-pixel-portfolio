@@ -25,9 +25,12 @@
         overflow: hidden;
 
         @include mobile{
-            flex-wrap: wrap;
+            overflow-x: scroll;
+            white-space: no-wrap;
+            width:100%;
             justify-content: center;
-            padding-bottom: 50px; 
+            align-items: center;
+            padding-bottom: 10px; 
         }
     }
 
@@ -58,11 +61,11 @@
             cursor: pointer;
 
             @include mobile{
-                margin: 10px;
+                margin: 5px;
                 padding: 0px;
                 width: 10em;
                 height: 10em;
-                border-radius: 20px;
+                border-radius: 10px;
             }
 
             h3{
