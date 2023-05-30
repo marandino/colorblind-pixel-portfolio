@@ -10,17 +10,17 @@ import { db } from "../../firebase";
 
 export default function Portfolio() {
   const [selected, setSelected] = useState("Food");
+  const [initialData, setinitialData] = useState([]);
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState("");
   const [download, setDownload] = useState(true);
 
-  const getPortfolioArt = async (category) => {
+  const getPortfolioArt = async () => {
     await getDocs(collection(db, "PortfolioArt")).then((response) => {
       const newData = response.docs
-        .map((doc) => ({ ...doc.data(), id: doc.url }))
-        .filter((doc) => doc.Category === category);
-      setData(newData);
+        .map((doc) => ({ ...doc.data(), id: doc.url }));
+        setinitialData(newData);
     });
   };
 
@@ -44,8 +44,12 @@ export default function Portfolio() {
   ];
 
   useEffect(() => {
-    getPortfolioArt(selected);
-  }, [selected]);
+    getPortfolioArt();
+  }, [])
+
+  useEffect(() => {
+    setData(initialData.filter((doc) => doc.Category === selected))
+  }, [selected, initialData]);
 
   return (
     <div className="portfolio" id="portfolio">
