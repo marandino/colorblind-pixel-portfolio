@@ -34,6 +34,7 @@
     }
 
     @include mobile {
+      top: 50px;
       > * {
         width: 100vw;
         height: calc(100vh - 100px);

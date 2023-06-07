@@ -11,7 +11,6 @@ function App() {
       <title>Colorblind Pixel</title>
       <link rel="shortcut icon" href="assets/zhoulogot.png" />
       <Topbar
-        className="topbar"
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
       />
