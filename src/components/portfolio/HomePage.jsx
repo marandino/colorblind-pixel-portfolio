@@ -2,7 +2,7 @@ import Intro from "../intro/Intro";
 import Portfolio from "./Portfolio";
 import Testimonials from "../testimonials/Testimonials";
 import Works from "../works/Works";
-// import Contact from "../contact/Contact";
+import Contact from "../contact/Contact";
 import Footer from "../footer/Footer";
 import "./homePage.scss";
 
@@ -16,6 +16,7 @@ function App() {
         <Portfolio className="portfolio" />
         <Testimonials />
         <Works />
+        <Contact />
         <Footer />
       </div>
     </div>
