@@ -1,7 +1,7 @@
 import Intro from "../intro/Intro";
 import Portfolio from "./Portfolio";
 import Testimonials from "../testimonials/Testimonials";
-import Works from "../works/Works";
+//import Works from "../works/Works";
 // import Contact from "../contact/Contact";
 import Footer from "../footer/Footer";
 import "./homePage.scss";
@@ -15,7 +15,6 @@ function App() {
         <Intro className="intro" />
         <Portfolio className="portfolio" />
         <Testimonials />
-        <Works />
         <Footer />
       </div>
     </div>
