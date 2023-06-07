@@ -9,6 +9,10 @@
   position: fixed;
   z-index: 1000;
   transition: all 1s ease;
+
+  @include mobile {
+    height: 50px;
+  }
   .wrapper {
     padding: 10px 30px;
     display: flex;
