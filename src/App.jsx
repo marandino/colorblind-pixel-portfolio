@@ -7,7 +7,7 @@ import { useState } from "react";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div>
+    <div className="main">
       <title>Colorblind Pixel</title>
       <link rel="shortcut icon" href="assets/zhoulogot.png" />
       <Topbar
