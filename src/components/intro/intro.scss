@@ -5,6 +5,7 @@
   height: 100vh;
   background-color: white;
   display: flex;
+  overflow: hidden;
 
   @include mobile {
     flex-direction: column;
