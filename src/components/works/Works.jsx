@@ -7,20 +7,20 @@ export default function Works() {
   const data = [
     {
       id: "1",
-      title: "Contact",
-      desc: "You can contact me via social media or email.",
-      img: "art/Places/BuildingsPractice.png",
+      title: "Portraits",
+      desc: "Pixel Art portraits commissions",
+      img: "assets/waymond.png",
     },
     {
       id: "2",
       title: "Pixel Logo",
       desc: "Pixel art logos for your social media.",
-      img: "./assets/zhoulogo.png",
+      img: "./assets/zhoulogobasic.png",
     },
     {
       id: "3",
-      title: "Wallpapers",
-      desc: "Wallpapers for your phones and computers.",
+      title: "And More!",
+      desc: "Your imagination is the limitation",
       img: "/Phone wallpaper template.png",
     },
   ];
