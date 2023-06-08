@@ -1,5 +1,5 @@
 import "./topbar.scss";
-import { Person, Mail, Shop } from "@material-ui/icons";
+import { Shop, Home } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 export default function Topbar({ menuOpen, setMenuOpen }) {
   return (
@@ -10,21 +10,39 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
             Colorblind Pixel.
           </a>
           <div className="itemContainer">
-            <Shop className="icon" />
+            <Home className="icon" />
             <span>
-              <Link to="shop" style={{textDecoration: 'none', color: 'black'}}>Shop</Link>
+              <Link
+                to="/"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                Home
+              </Link>
             </span>
           </div>
           <div className="itemContainer">
+            <Shop className="icon" />
+            <span>
+              <Link
+                to="shop"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                Shop
+              </Link>
+            </span>
+          </div>
+          {/*<div className="itemContainer">
             <Person className="icon" />
             <span>+506 60712317</span>
           </div>
           <div className="itemContainer">
             <Mail className="icon" />
             <span>colorblindpixelzhou@gmail.com</span>
-          </div>
+          </div>*/}
         </div>
+        <button type="submit" ><a href="/#contact">Contact me</a></button>
         <div className="right">
+
           <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
             <span className="line1"></span>
             <span className="line2"></span>

@@ -12,15 +12,15 @@ export default function Contact() {
 
   async function submitMessage() {
     const collectionRef = collection(db, "Messages");
-      try {
-        await addDoc(collectionRef, {
-          Message: text,
-          Email: email,
-          timestamp: serverTimestamp()
-        })
-      } catch (err) {
-        console.log(err);
-      }
+    try {
+      await addDoc(collectionRef, {
+        Message: text,
+        Email: email,
+        timestamp: serverTimestamp(),
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   const handleSubmit = async (e) => {
@@ -33,11 +33,22 @@ export default function Contact() {
       <div className="right">
         <h2>Contact me!</h2>
         <form onSubmit={handleSubmit}>
-          <input type="email" placeholder="Your Email" required onChange={(e) => setEmail(e.target.value)}/>
-          <textarea placeholder="Message" required onChange={(e) => setText(e.target.value)}></textarea>
+          <input
+            type="email"
+            placeholder="Your Email"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <textarea
+            placeholder="Message"
+            required
+            onChange={(e) => setText(e.target.value)}
+          ></textarea>
           <button type="submit">Send</button>
           {message && <span>Thanks, I'll reply ASAP</span>}
-          <h3><center>Contact me on Social Media!</center></h3>
+          <h3>
+            <center>Contact me on Social Media!</center>
+          </h3>
           <div className="socialMedia">
             <SocialMediaIcon
               socialMedia={"fa-facebook"}
@@ -54,10 +65,9 @@ export default function Contact() {
           </div>
         </form>
       </div>
-
-      <div className="left">
+      {/* <div className="left">
         
-      </div>
+      </div>*/}
     </div>
   );
 }
