@@ -82,8 +82,9 @@
             margin: 0 30px;
 
             @include mobile{
-              width: 50px;
-              height: 50px;
+              width: 90px;
+              height: 90px;
+              border-radius: 10px;
             }
           }
         }
