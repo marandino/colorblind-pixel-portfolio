@@ -2,7 +2,7 @@
 import "./intro.scss";
 import { init } from "ityped";
 import { useEffect, useRef } from "react";
-import SocialMediaIcon from "../socialMediaLinks/SocialMediaIcon";
+import SocialMediaSection from "../socialMediaLinks/SocialMediaSection";
 export default function Intro() {
   const textRef = useRef();
 
@@ -29,20 +29,7 @@ export default function Intro() {
           <h3>
             <span ref={textRef}></span>
           </h3>
-          <div className="socialMediaLogos">
-            <SocialMediaIcon
-              socialMedia={"fa-facebook"}
-              URL={"https://www.facebook.com/ZhouIsDrawing"}
-            />
-            <SocialMediaIcon
-              socialMedia={"fa-instagram"}
-              URL={"https://www.instagram.com/colorblind_pixel/"}
-            />
-            <SocialMediaIcon
-              socialMedia={"fa-twitter"}
-              URL={"https://twitter.com/ColorblindPixl"}
-            />
-          </div>
+          <SocialMediaSection />
         </div>
         <div className="arrow">
           <a href="#portfolio">

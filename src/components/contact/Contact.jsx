@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./contact.scss";
 import { serverTimestamp, addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase";
-import SocialMediaIcon from "../socialMediaLinks/SocialMediaIcon";
+import SocialMediaSection from "../socialMediaLinks/SocialMediaSection";
+
 
 export default function Contact() {
   const [message, setMessage] = useState(false);
@@ -28,6 +29,7 @@ export default function Contact() {
     await submitMessage();
     setMessage(true);
   };
+  
   return (
     <div className="contact" id="contact">
       <div className="right">
@@ -49,20 +51,7 @@ export default function Contact() {
           <h3>
             <center>Contact me on Social Media!</center>
           </h3>
-          <div className="socialMedia">
-            <SocialMediaIcon
-              socialMedia={"fa-facebook"}
-              URL={"https://www.facebook.com/ZhouIsDrawing"}
-            />
-            <SocialMediaIcon
-              socialMedia={"fa-instagram"}
-              URL={"https://www.instagram.com/colorblind_pixel/"}
-            />
-            <SocialMediaIcon
-              socialMedia={"fa-twitter"}
-              URL={"https://twitter.com/ColorblindPixl"}
-            />
-          </div>
+          <SocialMediaSection />
         </form>
       </div>
       {/* <div className="left">
