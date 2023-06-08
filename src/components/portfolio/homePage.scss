@@ -13,8 +13,8 @@
     height: calc(100vh - 70px);
     position: relative;
     top: 70px;
-    scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
     scrollbar-width: none; //for firefox
     &::-webkit-scrollbar {
       display: none;
@@ -27,6 +27,7 @@
     > * {
       width: 100vw;
       height: calc(100vh - 70px);
+      scroll-snap-align: start;
     }
 
     .portfolio {
