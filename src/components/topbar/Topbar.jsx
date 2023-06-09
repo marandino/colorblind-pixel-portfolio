@@ -20,6 +20,8 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
               </Link>
             </span>
           </div>
+          
+          {/*
           <div className="itemContainer">
             <Shop className="icon" />
             <span>
@@ -31,7 +33,7 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
               </Link>
             </span>
           </div>
-          {/*<div className="itemContainer">
+          <div className="itemContainer">
             <Person className="icon" />
             <span>+506 60712317</span>
           </div>

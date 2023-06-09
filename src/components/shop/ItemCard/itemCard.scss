@@ -1,8 +1,8 @@
 @import "../../../global.scss";
 
 .itemCard {
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +11,14 @@
     padding: 5px 10px 20px 10px;
     margin: 10px;
     box-shadow: 0px 0px 15px -8px black;
+
+    @include mobile{
+      margin: 3px;
+      padding: 2px 2px 5px 2px;
+      width: 11em;
+      height: 14em;
+      border-radius: 10px;
+  }
     
   .imageContainer {
     width: 100%;
@@ -24,6 +32,14 @@
     color: white;
     position: relative;
     cursor: pointer;
+
+    @include mobile{
+      margin: 5px;
+      padding: 0px;
+      width: 10em;
+      height: 10em;
+      border-radius: 10px;
+  }
 
     img {
       width: 100%;
@@ -45,5 +61,10 @@
     align-items: left;
     justify-content: left;
 
+    h3 {
+      @include mobile{
+        font-size: 1em;
+    }
+    }
   }
 }
