@@ -1,10 +1,15 @@
 import "./detailPage.scss";
+import {useParams} from "react-router-dom"
+import testData from "../../../testData";
 
 export default function DetailPage() {
+  const {itemId} = useParams();
+  const thisProduct = testData.find(prod => prod.id === itemId)
   return (
-    <div className="DetailPage">
+    <div className="detailPage">
+    <h1>{thisProduct.name}</h1>
       <div className="imageContainer">
-        <img src="assets/cevicheriaMagikarp.png" alt="" />
+
       </div>
     </div>
   );
