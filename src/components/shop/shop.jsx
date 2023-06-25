@@ -30,7 +30,7 @@ export default function Shop() {
         <h1>SHOP IN PROGRESS</h1>
         <div className="container">
           {items.map((item) => (
-            <ItemCard itemId={item.Id} title={item.Name} price={item.Price} imageURL={item.ImageURL}/>
+            <ItemCard itemId={item.Id} title={item.Name} price={item.Price} imageURL={item.ImageURL} isAvailable={item.Amount === 0}/>
           ))}
         </div>
       </div>
