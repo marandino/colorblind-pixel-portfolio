@@ -8,6 +8,8 @@ import { db } from "../../firebase";
 
 import { Link } from "react-router-dom";
 
+import { getPortfolioArt } from "../../Utils/FirebaseRequest/ItemsRequests";
+
 export default function Portfolio() {
   const [selected, setSelected] = useState("Food");
   const [data, setData] = useState([]);
@@ -15,15 +17,15 @@ export default function Portfolio() {
   const [image, setImage] = useState("");
   const [download, setDownload] = useState(true);
 
-  const getPortfolioArt = async () => {
-    await getDocs(collection(db, "PortfolioArt")).then((response) => {
-      const newData = response.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.url,
-      }));
-      setData(newData);
-    });
-  };
+  // const getPortfolioArt = async () => {
+  //   await getDocs(collection(db, "PortfolioArt")).then((response) => {
+  //     const newData = response.docs.map((doc) => ({
+  //       ...doc.data(),
+  //       id: doc.url,
+  //     }));
+  //     setData(newData);
+  //   });
+  // };
 
   const list = [
     {
@@ -44,7 +46,11 @@ export default function Portfolio() {
     },
   ];
   useEffect(() => {
-    getPortfolioArt();
+    const fetchData = async () => {
+      const data = await getPortfolioArt();
+      setData(data);
+    }
+    fetchData();
   }, []);
 
   return (
