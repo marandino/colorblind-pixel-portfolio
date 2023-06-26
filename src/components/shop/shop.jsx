@@ -1,27 +1,20 @@
 import "./shop.scss";
 import Footer from "./../footer/Footer";
 import ItemCard from "./ItemCard/ItemCard";
-import testData from "../../testData";
 
 import { useState, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase";
+
+import { getItems } from "../../Utils/FirebaseRequest/ItemsRequests";
 
 export default function Shop() {
   const [items, setItems] = useState([]);
-  const getItems = async () => {
-    await getDocs(collection(db, "Items")).then((response) => {
-      const newData = response.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.url,
-      }));
-      console.log(newData);
-      setItems(newData);
-    });
-  };
 
   useEffect(() => {
-    getItems();
+    const fetchData = async () => {
+      const data = await getItems();
+      setItems(data);
+    }
+    fetchData();
   }, []);
 
   return (

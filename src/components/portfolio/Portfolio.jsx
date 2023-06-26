@@ -3,11 +3,6 @@ import "./portfolio.scss";
 import { useState, useEffect } from "react";
 import { Lightbox } from "react-modal-image-react-17";
 
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase";
-
-import { Link } from "react-router-dom";
-
 import { getPortfolioArt } from "../../Utils/FirebaseRequest/ItemsRequests";
 
 export default function Portfolio() {
@@ -16,16 +11,6 @@ export default function Portfolio() {
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState("");
   const [download, setDownload] = useState(true);
-
-  // const getPortfolioArt = async () => {
-  //   await getDocs(collection(db, "PortfolioArt")).then((response) => {
-  //     const newData = response.docs.map((doc) => ({
-  //       ...doc.data(),
-  //       id: doc.url,
-  //     }));
-  //     setData(newData);
-  //   });
-  // };
 
   const list = [
     {
@@ -45,6 +30,7 @@ export default function Portfolio() {
       title: "Fullbody",
     },
   ];
+  
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPortfolioArt();

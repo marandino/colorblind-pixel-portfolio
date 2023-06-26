@@ -10,7 +10,7 @@ export default function ItemCard({ itemId, title, price, imageURL, isAvailable }
         <div className="description">
           <h3>{title}</h3>
           { !isAvailable && <span> Not Available</span>}
-          <span>{price}</span>
+          <span>₡ {new Intl.NumberFormat().format(price)} CRC</span>
         </div>
       </div>
     </Link>

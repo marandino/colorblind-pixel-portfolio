@@ -17,19 +17,43 @@
 
 /* eslint-disable jsx-a11y/anchor-has-content */
 import "./detailPage.scss";
-export default function DetailPage({ itemId, title, price, imageURL, isAvailable }) {
+import {useParams} from "react-router-dom"
+import { getItem } from "../../../Utils/FirebaseRequest/ItemsRequests";
+import { useState, useEffect } from "react";
+export default function DetailPage() {
+  const {itemId} = useParams();
+  const [imageUrl, setImageUrl] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState(0);
+  const [amount, setAmount] = useState("");
+  const [type, setType] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getItem(itemId);
+      setImageUrl(data.ImageURL);
+      setTitle(data.Name);
+      setPrice(data.Price);
+      setDescription(data.Description);
+      setAmount(data.Amount);
+      setType(data.Type);
+    }
+    fetchData();
+  }, []);
 
   return (
-    <div className="intro" id="intro">
+    <div className="DetailPage" id="DetailPage">
       <div className="left">
         <div className="imgContainer">
-          <img src="imageURL" alt="" />
+          <img src={imageUrl} alt="" />
         </div>
       </div>
       <div className="right">
         <div className="wrapper">
-          <h2>Hi there, I'm</h2>
-          <h1>Colorblind Pixel</h1>
+          <h2>{title}</h2>
+          <span>{price}</span>
+          <span>{description}</span>
         </div>
       </div>
     </div>
