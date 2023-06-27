@@ -38,10 +38,10 @@ export default function DetailPage() {
             <h4>{title}</h4>
             <span className="priceSpan">₡ {new Intl.NumberFormat().format(price)} CRC</span>
             <button type="submit" className="BuyBtn">
-              Buy now{" "}
+              Buy now
             </button>
             <button type="submit" className="AddCart">
-              Add to Cart{" "}
+              Add to Cart
             </button>
             <h2> Details </h2>
             <span>Detalles: {description.Details}</span>
