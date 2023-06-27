@@ -7,6 +7,7 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
       <div className="wrapper">
         <div className="left">
           <a href="/" className="logo">
+          <img src="assets/zhoulogo.png" alt="" />
             Colorblind Pixel.
           </a>
           <div className="itemContainer">
@@ -29,27 +30,6 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
               </Link>
             </span>
           </div>
-
-          {/*
-          <div className="itemContainer">
-            <Shop className="icon" />
-            <span>
-              <Link
-                to="shop"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                Shop
-              </Link>
-            </span>
-          </div>
-          <div className="itemContainer">
-            <Person className="icon" />
-            <span>+506 60712317</span>
-          </div>
-          <div className="itemContainer">
-            <Mail className="icon" />
-            <span>colorblindpixelzhou@gmail.com</span>
-          </div>*/}
         </div>
         <button type="submit">
           <a href="/#contact">Contact me</a>
