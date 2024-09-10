@@ -17,7 +17,7 @@ jobs:
           gh pr view $PR --json headRefName > branch.json
           sourceBranch=`cat branch.json | jq .headRefName -r`
 
-          ticket=$(echo "$sourceBranch" | grep -oP '([A-Za-z]*-[0-9]*)')
+          echo "Source Branch: $sourceBranch"
 
           # this is an example of a branch name: story/RR-1234/this-is-a-cool-story
           # Parse the branch name separated by '/'
@@ -32,12 +32,16 @@ jobs:
               titleIndex=1
           fi
 
+          echo "Ticket Index: $ticketIndex"
+          echo "Title Index: $titleIndex"
+
           ticket="${branch_parts[$ticketIndex]}"
 
           echo "Ticket: $ticket"
 
           # Extract the title from the branch name
           branch_title="${branch_parts[$titleIndex]}"
+          echo "Branch Title: $branch_title"
 
           # Replace hyphens with spaces
           title_with_spaces=$(echo "$branch_title" | sed 's/-/ /g')
