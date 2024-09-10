@@ -1,0 +1,31 @@
+name: "Rename PR"
+on:
+  pull_request:
+    types:
+      - opened
+env:
+  PR: ${{ github.event.pull_request.html_url }}
+jobs:
+  rename-pr:
+    runs-on: ubuntu-latest-8-cores
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Rename PR"
+        run: |
+          gh pr view $PR --json headRefName > branch.json
+          sourceBranch=`cat branch.json | jq .headRefName -r`
+
+          ticket=`node ./.github/fetch-branch-name.js $sourceBranch branch`
+          prType=`node ./.github/fetch-branch-name.js $sourceBranch type`
+          title=`node ./.github/fetch-branch-name.js $sourceBranch title`
+
+          echo "Ticket  : $ticket"
+          echo "PR Type : $prType"
+          echo "Title   : $title"
+
+          if [ ! -z "$title" ]
+          then
+            gh pr edit $PR --title "${ticket} - ${title}"
+          else
+            echo "No standard title found in branch name."
+          fi
