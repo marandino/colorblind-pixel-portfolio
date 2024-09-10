@@ -8,9 +8,9 @@ env:
   PR: ${{ github.event.pull_request.html_url }}
 jobs:
   rename-pr:
-    runs-on: ubuntu-latest-8-cores
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: "Rename PR"
         run: |
           gh pr view $PR --json headRefName > branch.json
