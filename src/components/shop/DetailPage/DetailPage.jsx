@@ -1,6 +1,5 @@
 import "./detailPage.scss";
 import { useParams } from "react-router-dom";
-import { getItem } from "../../../Utils/FirebaseRequest/ItemsRequests";
 import { useState, useEffect } from "react";
 export default function DetailPage() {
   const { itemId } = useParams();
@@ -13,11 +12,19 @@ export default function DetailPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getItem(itemId);
+      // FIXME: this currently doesn't exist because the firebase account is not active anymore
+      const data = {
+        ImageURL: "",
+        Name: "",
+        Price: 0,
+        Description: "",
+        Amount: 0,
+        Type: "",
+      };
+
       setImageUrl(data.ImageURL);
       setTitle(data.Name);
       setPrice(data.Price);
-      console.log(data.Description)
       setDescription(data.Description);
       setAmount(data.Amount);
       setType(data.Type);
@@ -36,7 +43,9 @@ export default function DetailPage() {
         <div className="right">
           <div className="wrapper">
             <h4>{title}</h4>
-            <span className="priceSpan">₡ {new Intl.NumberFormat().format(price)} CRC</span>
+            <span className="priceSpan">
+              ₡ {new Intl.NumberFormat().format(price)} CRC
+            </span>
             <button type="submit" className="BuyBtn">
               Buy now
             </button>

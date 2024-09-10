@@ -3,8 +3,6 @@ import "./portfolio.scss";
 import { useState, useEffect } from "react";
 import { Lightbox } from "react-modal-image-react-17";
 
-import { getPortfolioArt } from "../../Utils/FirebaseRequest/ItemsRequests";
-
 export default function Portfolio() {
   const [selected, setSelected] = useState("Food");
   const [data, setData] = useState([]);
@@ -33,8 +31,8 @@ export default function Portfolio() {
   
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getPortfolioArt();
-      setData(data);
+      // FIXME: this currently doesn't exist because the firebase account is not active anymore
+      setData([])
     }
     fetchData();
   }, []);
