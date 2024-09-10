@@ -3,16 +3,19 @@ import "./intro.scss";
 import { init } from "ityped";
 import { useEffect, useRef } from "react";
 import SocialMediaSection from "../socialMediaLinks/SocialMediaSection";
+
 export default function Intro() {
-  const textRef = useRef();
+  const textRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    init(textRef.current, {
-      showCursor: true,
-      backDelay: 1500,
-      backSpeed: 60,
-      strings: ["Pixel Art", "Pixel Art Logos", "Pixel Art Animation"],
-    });
+    if (textRef.current) {
+      init(textRef.current, {
+        showCursor: true,
+        backDelay: 1500,
+        backSpeed: 60,
+        strings: ["Pixel Art", "Pixel Art Logos", "Pixel Art Animation"],
+      });
+    }
   }, []);
 
   return (
