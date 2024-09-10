@@ -17,9 +17,6 @@ jobs:
           gh pr view $PR --json headRefName > branch.json
           sourceBranch=`cat branch.json | jq .headRefName -r`
 
-          echo "Source Branch: $sourceBranch"
-
-          # this is an example of a branch name: story/RR-1234/this-is-a-cool-story
           # Parse the branch name separated by '/'
           IFS='/' read -ra branch_parts <<< "$sourceBranch"
 
@@ -32,26 +29,13 @@ jobs:
               titleIndex=1
           fi
 
-          echo "Ticket Index: $ticketIndex"
-          echo "Title Index: $titleIndex"
-
           ticket="${branch_parts[$ticketIndex]}"
-
-          echo "Ticket: $ticket"
 
           # Extract the title from the branch name
           branch_title="${branch_parts[$titleIndex]}"
-          echo "Branch Title: $branch_title"
 
-          # Replace hyphens with spaces
-          title_with_spaces=$(echo "$branch_title" | sed 's/-/ /g')
-
-          # Capitalize the first letter of each word
-          title=$(echo "$title_with_spaces" | awk '{
-              for (i=1; i<=NF; i++) {
-                  $i = toupper(substr($i,1,1)) substr($i,2)
-              }
-          }')
+          # Convert hyphens to spaces and capitalize each word
+          title=$(echo "$branch_title" | sed -e 's/-/ /g; s/\b\(.\)/\u\1/g')
 
           if [ ! -z "$title" ]
           then
