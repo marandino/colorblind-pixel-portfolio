@@ -1,8 +1,9 @@
 name: "Rename PR"
 on:
   pull_request:
-    types:
-      - opened
+  # pull_request:
+  #   types:
+  #     - opened
 env:
   PR: ${{ github.event.pull_request.html_url }}
 jobs:
@@ -15,13 +16,37 @@ jobs:
           gh pr view $PR --json headRefName > branch.json
           sourceBranch=`cat branch.json | jq .headRefName -r`
 
-          ticket=`node ./.github/fetch-branch-name.js $sourceBranch branch`
-          prType=`node ./.github/fetch-branch-name.js $sourceBranch type`
-          title=`node ./.github/fetch-branch-name.js $sourceBranch title`
+          ticket=$(echo "$sourceBranch" | grep -oP '([A-Za-z]*-[0-9]*)')
 
-          echo "Ticket  : $ticket"
-          echo "PR Type : $prType"
-          echo "Title   : $title"
+          # this is an example of a branch name: story/RR-1234/this-is-a-cool-story
+          # Parse the branch name separated by '/'
+          IFS='/' read -ra branch_parts <<< "$sourceBranch"
+
+          # Determine ticket and title indices based on branch parts
+          if [ ${#branch_parts[@]} -eq 3 ]; then
+              ticketIndex=1
+              titleIndex=2
+          else
+              ticketIndex=0
+              titleIndex=1
+          fi
+
+          ticket="${branch_parts[$ticketIndex]}"
+
+          echo "Ticket: $ticket"
+
+          # Extract the title from the branch name
+          branch_title="${branch_parts[$titleIndex]}"
+
+          # Replace hyphens with spaces
+          title_with_spaces=$(echo "$branch_title" | sed 's/-/ /g')
+
+          # Capitalize the first letter of each word
+          title=$(echo "$title_with_spaces" | awk '{
+              for (i=1; i<=NF; i++) {
+                  $i = toupper(substr($i,1,1)) substr($i,2)
+              }
+          }')
 
           if [ ! -z "$title" ]
           then
