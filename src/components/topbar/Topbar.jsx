@@ -1,5 +1,5 @@
 import "./topbar.scss";
-import { Shop, Home } from "@material-ui/icons";
+// import { Shop, Home } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 export default function Topbar({ menuOpen, setMenuOpen }) {
   return (
@@ -11,7 +11,7 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
             Colorblind Pixel.
           </a>
           <div className="itemContainer">
-            <Home className="icon" />
+            {/* <Home className="icon" /> */}
             <span>
               <Link to="/" style={{ textDecoration: "none", color: "black" }}>
                 Home
@@ -20,7 +20,7 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
           </div>
 
           <div className="itemContainer">
-            <Shop className="icon" />
+           {/* <Shop className="icon" /> */}
             <span>
               <Link
                 to="shop"
