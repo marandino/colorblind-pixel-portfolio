@@ -1,7 +1,5 @@
 import { useState } from "react";
 import "./contact.scss";
-import { serverTimestamp, addDoc, collection } from "firebase/firestore";
-import { db } from "../../firebase";
 import SocialMediaSection from "../socialMediaLinks/SocialMediaSection";
 
 
@@ -12,24 +10,17 @@ export default function Contact() {
   const [text, setText] = useState("");
 
   async function submitMessage() {
-    const collectionRef = collection(db, "Messages");
-    try {
-      await addDoc(collectionRef, {
-        Message: text,
-        Email: email,
-        timestamp: serverTimestamp(),
-      });
-    } catch (err) {
-      console.log(err);
-    }
+    console.log("We're not submitting anything, this is a placeholder.")
+    console.log("Email: ", email);
+    console.log("Text: ", text);
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await submitMessage();
     setMessage(true);
   };
-  
+
   return (
     <div className="contact" id="contact">
       <div className="right">

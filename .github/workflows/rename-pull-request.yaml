@@ -1,0 +1,44 @@
+name: "Rename PR"
+on:
+  pull_request:
+    types:
+      - opened
+env:
+  PR: ${{ github.event.pull_request.html_url }}
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  rename-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Rename PR"
+        run: |
+          gh pr view $PR --json headRefName > branch.json
+          sourceBranch=`cat branch.json | jq .headRefName -r`
+
+          # Parse the branch name separated by '/'
+          IFS='/' read -ra branch_parts <<< "$sourceBranch"
+
+          # Determine ticket and title indices based on branch parts
+          if [ ${#branch_parts[@]} -eq 3 ]; then
+              ticketIndex=1
+              titleIndex=2
+          else
+              ticketIndex=0
+              titleIndex=1
+          fi
+
+          ticket="${branch_parts[$ticketIndex]}"
+
+          # Extract the title from the branch name
+          branch_title="${branch_parts[$titleIndex]}"
+
+          # Convert hyphens to spaces and capitalize each word
+          title=$(echo "$branch_title" | sed -e 's/-/ /g; s/\b\(.\)/\u\1/g')
+
+          if [ ! -z "$title" ]
+          then
+            gh pr edit $PR --title "${ticket} - ${title}"
+          else
+            echo "No standard title found in branch name."
+          fi
