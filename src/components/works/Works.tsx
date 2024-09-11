@@ -1,10 +1,16 @@
 import "./works.scss";
 import { useState } from "react";
 
-//Needs improvement
+type SlideData = {
+  id: string;
+  title: string;
+  desc: string;
+  img: string;
+};
+
 export default function Works() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const data = [
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const data: SlideData[] = [
     {
       id: "1",
       title: "Portraits",
@@ -15,7 +21,7 @@ export default function Works() {
       id: "2",
       title: "Pixel Logo",
       desc: "Pixel art logos for your social media.",
-      img: "./assets/zhoulogobasic.png",
+      img: "./assets/zhouLogoBasic.png",
     },
     {
       id: "3",
@@ -25,10 +31,12 @@ export default function Works() {
     },
   ];
 
-  const handleClick = (way) => {
-    way === "left"
-      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
-      : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
+  const handleClick = (way: "left" | "right") => {
+    if (way === "left") {
+      setCurrentSlide((prev) => (prev > 0 ? prev - 1 : data.length - 1));
+    } else {
+      setCurrentSlide((prev) => (prev < data.length - 1 ? prev + 1 : 0));
+    }
   };
 
   return (
@@ -38,7 +46,7 @@ export default function Works() {
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
       >
         {data.map((d) => (
-          <div className="container">
+          <div className="container" key={d.id}>
             <div className="item">
               <div className="left">
                 <div className="leftContainer">
@@ -47,7 +55,7 @@ export default function Works() {
                 </div>
               </div>
               <div className="right">
-                <img src={d.img} alt="" />
+                <img src={d.img} alt={d.title} />
               </div>
             </div>
           </div>
@@ -56,14 +64,14 @@ export default function Works() {
       <img
         src="assets/arrow.png"
         className="arrow left"
-        alt=""
+        alt="left arrow"
         onClick={() => handleClick("left")}
       />
       <img
         src="assets/arrow.png"
         className="arrow right"
-        alt=""
-        onClick={() => handleClick()}
+        alt="right arrow"
+        onClick={() => handleClick("right")}
       />
     </div>
   );
