@@ -16,7 +16,7 @@ export default function Testimonials() {
       name: "Hi-C Costa Rica",
       title: "Beverage Company",
       img:
-        "#",
+        "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932152/3b735fd1-eb1d-4d60-9bd2-d805ec1dfdb1.png",
       desc: "Beverage company from Coca-Cola FEMSA",
     },
     {
@@ -24,7 +24,7 @@ export default function Testimonials() {
       name: "Tropical",
       title: "Juice Company",
       img:
-        "#",
+        "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932135/64aaf1b4-4457-454d-b9d1-1ffebb05857a.png",
       desc:
         "Tropical is Costa Rica's top brand for Refreshing Beverages and Iced Tea.",
       featured: true,
@@ -34,7 +34,7 @@ export default function Testimonials() {
       name: "Cerveza Patagonia",
       title: "Brewing Company",
       img:
-        "#",
+        "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932131/eda3d600-7499-406c-bbbb-a7648fe26d74.png",
       desc:
         "Patagonia is an Argentine beer brand owned by Patagonia Brewing Company.",
     },
