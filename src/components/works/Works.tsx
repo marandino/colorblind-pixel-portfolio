@@ -31,12 +31,10 @@ export default function Works() {
     },
   ];
 
-  const handleClick = (way: "left" | "right") => {
-    if (way === "left") {
-      setCurrentSlide((prev) => (prev > 0 ? prev - 1 : data.length - 1));
-    } else {
-      setCurrentSlide((prev) => (prev < data.length - 1 ? prev + 1 : 0));
-    }
+  const handleClick = (way: string) => {
+    way === "left"
+      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : data.length - 1)
+      : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
 
   return (
