@@ -36,7 +36,7 @@ export default function Contact() {
             onChange={(e) => setText(e.target.value)}
           ></textarea>
           <button type="submit">Send</button>
-          {message && <span>Thanks, I'll reply ASAP</span>}
+          {message && <span>Thanks, I&apos;ll reply ASAP</span>}
           <h3>
             <center>Contact me on Social Media!</center>
           </h3>
