@@ -22,7 +22,7 @@ export default function Intro() {
     <div className="intro" id="intro">
       <div className="left">
         <div className="imgContainer">
-          <img src="assets/cevicheriaMagikarp.png" alt="" />
+          <img src="https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932096/94e95e1d-2e1a-4375-81ce-042132ff5f0a.png" alt="" />
         </div>
       </div>
       <div className="right">
