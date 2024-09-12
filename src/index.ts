@@ -8,10 +8,8 @@ import { createRoot } from 'react-dom/client';
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  React.createElement(React.StrictMode, null,
-    React.createElement(BrowserRouter, null,
-      React.createElement(Provider, { store: store, children: React.createElement(App, null) },
-      )
+  React.createElement(BrowserRouter, null,
+    React.createElement(Provider, { store: store, children: React.createElement(App, null) },
     )
   )
 );
