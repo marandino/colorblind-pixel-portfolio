@@ -1,9 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import App from "./App";
 import store from "./store";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { createRoot } from 'react-dom/client';
+
 // import ErrorPage from "./components/errorPage/error-page";
 // import Portfolio from "./components/portfolio/Portfolio";
 // // import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -21,13 +22,13 @@ import { BrowserRouter } from "react-router-dom";
 // //   },
 // // ]);
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
