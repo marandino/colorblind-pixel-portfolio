@@ -15,19 +15,19 @@ export default function Works() {
       id: "1",
       title: "Portraits",
       desc: "Pixel Art portraits commissions",
-      img: "assets/waymond.png",
+      img: "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932034/7bc7f1c2-b43f-4803-bded-2bee270d458a.png",
     },
     {
       id: "2",
       title: "Pixel Logo",
       desc: "Pixel art logos for your social media.",
-      img: "./assets/zhouLogoBasic.png",
+      img: "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932069/e60b8382-d03a-4e97-a192-5e28763af8cf.png",
     },
     {
       id: "3",
       title: "And More!",
       desc: "Your imagination is the limitation",
-      img: "/Phone wallpaper template.png",
+      img: "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932085/c66fc734-9911-4928-8c3c-ecd5b34dcaf0.png",
     },
   ];
 
