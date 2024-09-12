@@ -25,7 +25,7 @@ export default function Shop(): JSX.Element {
           Name: "Grumpy Cat Poster",
           Description: "Everyone's favorite cat who loves to hate",
           Price: 15,
-          ImageURL:
+          ImageURL://link works correctly, this one is just not reachable. Using this as placeholder
             "https://m.media-amazon.com/images/I/71-3ZzX-QLL._AC_UF894,1000_QL80_.jpg",
           Amount: 0,
         },
