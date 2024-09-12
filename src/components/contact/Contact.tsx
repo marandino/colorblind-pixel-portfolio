@@ -2,15 +2,13 @@ import { useState } from "react";
 import "./contact.scss";
 import SocialMediaSection from "../socialMediaLinks/SocialMediaSection";
 
-
 export default function Contact() {
-  const [message, setMessage] = useState(false);
+  const [message, setMessage] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>("");
+  const [text, setText] = useState<string>("");
 
-  const [email, setEmail] = useState("");
-  const [text, setText] = useState("");
-
-  async function submitMessage() {
-    console.log("We're not submitting anything, this is a placeholder.")
+  async function submitMessage(): Promise<void> {
+    console.log("We're not submitting anything, this is a placeholder.");
     console.log("Email: ", email);
     console.log("Text: ", text);
   }
