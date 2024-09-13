@@ -1,16 +1,22 @@
 import { useRouteError, isRouteErrorResponse } from 'react-router-dom';
 import './error-page.scss';
 
+const getErrorMessage = (error: unknown): string => {
+  if (isRouteErrorResponse(error)) {
+    return error.error?.message || error.statusText;
+  }
+  if (error instanceof Error) {
+    return error.message;
+  }
+  if (typeof error === 'string') {
+    return error;
+  }
+  return 'Unknown error';
+};
+
 export default function ErrorPage() {
   const error = useRouteError();
-
-  const errorMessage = isRouteErrorResponse(error)
-    ? error.error?.message || error.statusText
-    : error instanceof Error
-    ? error.message
-    : typeof error === 'string'
-    ? error
-    : 'Unknown error';
+  const errorMessage = getErrorMessage(error);
 
   console.error(error);
 
