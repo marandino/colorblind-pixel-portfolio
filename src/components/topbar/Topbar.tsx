@@ -1,17 +1,21 @@
 import "./topbar.scss";
-// import { Shop, Home } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-export default function Topbar({ menuOpen, setMenuOpen }) {
+
+interface TopbarProps {
+  menuOpen: boolean;
+  setMenuOpen: (open: boolean) => void;
+}
+
+export default function Topbar({ menuOpen, setMenuOpen }: TopbarProps) {
   return (
     <div className={"topbar " + (menuOpen && "active")}>
       <div className="wrapper">
         <div className="left">
           <a href="/" className="logo">
-          <img src="assets/zhoulogo.png" alt="" />
+            <img src="assets/zhoulogo.png" alt="Colorblind Pixel logo" />
             Colorblind Pixel.
           </a>
           <div className="itemContainer">
-            {/* <Home className="icon" /> */}
             <span>
               <Link to="/" style={{ textDecoration: "none", color: "black" }}>
                 Home
@@ -20,10 +24,9 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
           </div>
 
           <div className="itemContainer">
-           {/* <Shop className="icon" /> */}
             <span>
               <Link
-                to="shop"
+                to="/shop"
                 style={{ textDecoration: "none", color: "black" }}
               >
                 Shop
