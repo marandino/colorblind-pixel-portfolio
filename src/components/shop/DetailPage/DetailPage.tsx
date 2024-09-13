@@ -1,5 +1,5 @@
 import "./detailPage.scss";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 interface ProductData {
@@ -16,7 +16,7 @@ interface ProductData {
 }
 
 export default function DetailPage() {
-  const { itemId } = useParams<{ itemId: string }>();
+  // const { itemId } = useParams<{ itemId: string }>();
   const [imageUrl, setImageUrl] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<ProductData["Description"]>({
@@ -25,8 +25,8 @@ export default function DetailPage() {
     Size: "",
   });
   const [price, setPrice] = useState<number>(0);
-  const [amount, setAmount] = useState<number>(0);
-  const [type, setType] = useState<string>("");
+  // const [amount, setAmount] = useState<number>(0);
+  // const [type, setType] = useState<string>("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,8 +47,8 @@ export default function DetailPage() {
       setTitle(data.Name);
       setPrice(data.Price);
       setDescription(data.Description);
-      setAmount(data.Amount);
-      setType(data.Type);
+      // setAmount(data.Amount);
+      // setType(data.Type);
     };
     fetchData();
   }, []);
