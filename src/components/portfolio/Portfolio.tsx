@@ -53,28 +53,28 @@ export default function Portfolio() {
         {
           Name: "Food",
           // TODO: replace with actual image
-          URL: "https://picsum.photos/200/500",
+          URL: "https://res.cloudinary.com/dkhpxyxnt/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1726200671/CHIFRIJO_vhrzux.png",
           Category: "Food",
           id: "1",
         },
         {
           Name: "Background",
           // TODO: replace with actual image
-          URL: "https://picsum.photos/200/400",
+          URL: "https://res.cloudinary.com/dkhpxyxnt/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1726200389/ruinasBackground_ukqnv3.png",
           Category: "Background",
           id: "2",
         },
         {
           Name: "Portrait",
           // TODO: replace with actual image
-          URL: "https://picsum.photos/200/200",
+          URL: "https://res.cloudinary.com/dkhpxyxnt/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1726200029/waymond_xvguen.png",
           Category: "Portrait",
           id: "3",
         },
         {
           Name: "Fullbody",
           // TODO: replace with actual image
-          URL: "https://picsum.photos/200/900",
+          URL: "https://res.cloudinary.com/dkhpxyxnt/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1726200500/saulGoodMan_rgnelw.png",
           Category: "Fullbody",
           id: "4",
         },
