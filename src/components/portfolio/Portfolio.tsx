@@ -91,7 +91,7 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div className="container">
+    <section className="container">
       <h1>Portfolio</h1>
 
       <PortfolioCategories
@@ -140,6 +140,6 @@ export default function Portfolio() {
           onClose={() => setOpen(false)}
         />
       )}
-    </div>
+    </section>
   );
 }
