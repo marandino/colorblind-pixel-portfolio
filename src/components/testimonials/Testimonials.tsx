@@ -15,33 +15,28 @@ export default function Testimonials() {
       id: 1,
       name: "Hi-C Costa Rica",
       title: "Beverage Company",
-      img:
-        "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932152/3b735fd1-eb1d-4d60-9bd2-d805ec1dfdb1.png",
+      img: "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932152/3b735fd1-eb1d-4d60-9bd2-d805ec1dfdb1.png",
       desc: "Beverage company from Coca-Cola FEMSA",
     },
     {
       id: 2,
       name: "Tropical",
       title: "Juice Company",
-      img:
-        "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932135/64aaf1b4-4457-454d-b9d1-1ffebb05857a.png",
-      desc:
-        "Tropical is Costa Rica's top brand for Refreshing Beverages and Iced Tea.",
+      img: "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932135/64aaf1b4-4457-454d-b9d1-1ffebb05857a.png",
+      desc: "Tropical is Costa Rica's top brand for Refreshing Beverages and Iced Tea.",
       featured: true,
     },
     {
       id: 3,
       name: "Cerveza Patagonia",
       title: "Brewing Company",
-      img:
-        "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932131/eda3d600-7499-406c-bbbb-a7648fe26d74.png",
-      desc:
-        "Patagonia is an Argentine beer brand owned by Patagonia Brewing Company.",
+      img: "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932131/eda3d600-7499-406c-bbbb-a7648fe26d74.png",
+      desc: "Patagonia is an Argentine beer brand owned by Patagonia Brewing Company.",
     },
   ];
 
   return (
-    <div className="testimonials" id="testimonials">
+    <section className="testimonials" id="testimonials">
       <h1>Clients</h1>
       <div className="container">
         {data.map((d) => (
@@ -57,6 +52,6 @@ export default function Testimonials() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
