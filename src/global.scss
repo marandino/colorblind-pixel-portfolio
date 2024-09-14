@@ -40,8 +40,11 @@ body {
 	border-radius: 5px;
 	cursor: pointer;
 	border: none;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	text-transform: capitalize;
+	@include desktop {
+		font-size: 1.2rem;
+	}
 }
 
 // Styles
@@ -60,15 +63,15 @@ body {
 }
 
 section {
-	padding: 10vh 0;
+	padding-top: 5vh;
 }
 
 // Global h1 styling
 h1 {
-	font-size: 50px;
+	font-size: 3rem;
 	text-align: center;
 
 	@include mobile {
-		font-size: 20px;
+		font-size: 2rem;
 	}
 }
