@@ -1,15 +1,9 @@
-import PortfolioList from "../portfolioTabs/PortfolioTabs";
 import "./portfolio.scss";
 import { useState, useEffect } from "react";
 import { Lightbox as BaseLightbox } from "react-modal-image";
-
-type Data = {
-  Name: string;
-  URL: string;
-  Category: string;
-  id: string;
-  title?: string;
-};
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import CloudinaryImage from "../CloudinaryImage/CloudinaryImage";
+import PortfolioCategories from "../PortfolioCategories/PortfolioCategories";
 
 // TODO: fix this by installing the latest version of the types, once my PR is merged to their repo.
 const Lightbox = (
@@ -17,124 +11,135 @@ const Lightbox = (
 ) => {
   return <BaseLightbox {...props} />;
 };
+// https://cloudinary.com/documentation/list_assets
+// https://res.cloudinary.com/<your_cloud_name>/<resource_type>/list/<tag>.json
+// notes, had to allow the resource list to be public in the cloudinary console, to get this to work.
+
+const cloudName = "dkhpxyxnt"; // Replace with your Cloudinary cloud name
+
+type ImageWithMetadata = {
+  caption: string;
+  description: string;
+  alt: string;
+  public_id: string;
+};
+
+const parseImageData = (resource: unknown): ImageWithMetadata | undefined => {
+  if (typeof resource === "object" && resource !== null) {
+    const { caption, description, alt, public_id } = resource as {
+      caption: string;
+      description: string;
+      alt: string;
+      public_id: string;
+    };
+    return { caption, description, alt, public_id };
+  }
+  return undefined;
+};
+
+const fetchTagData = async (tag: string): Promise<ImageWithMetadata[]> => {
+  console.log("fetching data for tag", tag);
+  return fetch(`https://res.cloudinary.com/${cloudName}/image/list/${tag}.json`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      return data.resources.map((resource: unknown) => {
+        const image = parseImageData(resource);
+        if (image) {
+          return image;
+        }
+      });
+    })
+    .catch((error) => console.error("Error fetching folder images:", error));
+};
 
 export default function Portfolio() {
-  const [selected, setSelected] = useState("Food");
-  const [data, setData] = useState<Data[]>([]);
+  //eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [snacks, setSnacks] = useState<ImageWithMetadata[]>([]);
+  //eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [anime, setAnime] = useState<ImageWithMetadata[]>([]);
+  //eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [backgrounds, setBackgrounds] = useState<ImageWithMetadata[]>([]);
+
+  const [selectedCategory, setSelectedCategory] = useState<string>("snacks");
+  const [maximumImages, setMaximumImages] = useState(12);
+
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState("");
-  const [download, setDownload] = useState(true);
+  // const [download, setDownload] = useState(true);
 
-  const list = [
-    {
-      id: "Food",
-      title: "Food",
-    },
-    {
-      id: "Background",
-      title: "Background",
-    },
-    {
-      id: "Portrait",
-      title: "Portrait",
-    },
-    {
-      id: "Fullbody",
-      title: "Fullbody",
-    },
-  ];
+  const tags = ["snacks", "anime", "backgrounds"];
 
   useEffect(() => {
     const fetchData = async () => {
-      // TODO: remove this placeholder data
-      // note: this will probably be replaced with some cloudinary data, or such. Also, the whole thing might be replaced
-      // with a Masonry component, that shows the images in a grid
-      setData([
-        {
-          Name: "Food",
-          // TODO: replace with actual image
-          URL: "https://res.cloudinary.com/dkhpxyxnt/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1726200671/CHIFRIJO_vhrzux.png",
-          Category: "Food",
-          id: "1",
-        },
-        {
-          Name: "Background",
-          // TODO: replace with actual image
-          URL: "https://res.cloudinary.com/dkhpxyxnt/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1726200389/ruinasBackground_ukqnv3.png",
-          Category: "Background",
-          id: "2",
-        },
-        {
-          Name: "Portrait",
-          // TODO: replace with actual image
-          URL: "https://res.cloudinary.com/dkhpxyxnt/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1726200029/waymond_xvguen.png",
-          Category: "Portrait",
-          id: "3",
-        },
-        {
-          Name: "Fullbody",
-          // TODO: replace with actual image
-          URL: "https://res.cloudinary.com/dkhpxyxnt/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1726200500/saulGoodMan_rgnelw.png",
-          Category: "Fullbody",
-          id: "4",
-        },
-      ]);
+      tags.forEach(async (tag) => {
+        const data = await fetchTagData(tag);
+        switch (tag) {
+          case "snacks":
+            setSnacks(data);
+            break;
+          case "anime":
+            setAnime(data);
+            break;
+          case "backgrounds":
+            setBackgrounds(data);
+        }
+      });
     };
     fetchData();
   }, []);
 
   return (
-    <div className="portfolio" id="portfolio">
+    <div className="container">
       <h1>Portfolio</h1>
-      <ul>
-        {list.map((item) => (
-          <PortfolioList
-            title={item.title}
-            active={selected === item.id}
-            setSelected={setSelected}
-            id={item.id}
-            key={item.id}
-          />
-        ))}
-      </ul>
 
-      <div className="container">
-        {data &&
-          data
-            .filter((doc) => doc.Category === selected)
-            .map((d) => (
-              <div className="item" key={d.id}>
-                {" "}
-                {/* Added key prop */}
-                <img
-                  src={d.URL}
-                  alt={d.Name}
-                  onClick={() => {
-                    setOpen(true);
-                    setImage(d.URL);
-                    setDownload(selected !== "free");
-                  }}
-                />
-                <h3
-                  onClick={() => {
-                    setOpen(true);
-                    setImage(d.URL);
-                  }}
-                >
-                  {d.Name}
-                </h3>
-              </div>
+      <PortfolioCategories
+        categories={tags}
+        activeCategory={selectedCategory}
+        onCategoryChange={setSelectedCategory}
+      />
+
+      <ResponsiveMasonry columnsCountBreakPoints={{ 900: 4, 600: 3 }}>
+        <Masonry gutter="10px">
+          {eval(selectedCategory)
+            .slice(0, maximumImages)
+            .map((image: ImageWithMetadata) => (
+              <CloudinaryImage
+                onClick={() => {
+                  setImage(image.public_id);
+                  setOpen(true);
+                }}
+                key={image.public_id}
+                public_id={image.public_id}
+                height={50}
+                alt={image.alt}
+              />
             ))}
-        {open && (
-          <Lightbox
-            small={image}
-            large={image}
-            alt="Portfolio Image"
-            onClose={() => setOpen(false)}
-            hideDownload={download}
-          />
-        )}
-      </div>
+        </Masonry>
+      </ResponsiveMasonry>
+
+      {maximumImages < eval(selectedCategory).length && (
+        <div className="portfolio-load-more">
+          <button
+            className="button"
+            onClick={() => setMaximumImages(maximumImages + 9)}
+          >
+            load more
+          </button>
+        </div>
+      )}
+
+      {open && (
+        <Lightbox
+          small={`https://res.cloudinary.com/${cloudName}/image/upload/${image}`}
+          large={`https://res.cloudinary.com/${cloudName}/image/upload/${image}`}
+          hideDownload={true}
+          hideZoom={true}
+          alt={image}
+          onClose={() => setOpen(false)}
+        />
+      )}
     </div>
   );
 }
