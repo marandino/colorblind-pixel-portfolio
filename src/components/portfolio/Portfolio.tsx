@@ -15,8 +15,6 @@ const Lightbox = (
 // https://res.cloudinary.com/<your_cloud_name>/<resource_type>/list/<tag>.json
 // notes, had to allow the resource list to be public in the cloudinary console, to get this to work.
 
-const cloudName = "dkhpxyxnt"; // Replace with your Cloudinary cloud name
-
 type ImageWithMetadata = {
   caption: string;
   description: string;
@@ -39,7 +37,7 @@ const parseImageData = (resource: unknown): ImageWithMetadata | undefined => {
 
 const fetchTagData = async (tag: string): Promise<ImageWithMetadata[]> => {
   console.log("fetching data for tag", tag);
-  return fetch(`https://res.cloudinary.com/${cloudName}/image/list/${tag}.json`)
+  return fetch(`https://res.cloudinary.com/dkhpxyxnt/image/list/${tag}.json`)
     .then((response) => {
       return response.json();
     })
@@ -65,6 +63,8 @@ export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState<string>("snacks");
   const [maximumImages, setMaximumImages] = useState(12);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState("");
   // const [download, setDownload] = useState(true);
@@ -88,6 +88,7 @@ export default function Portfolio() {
       });
     };
     fetchData();
+    setIsMobile(window.innerWidth <= 768);
   }, []);
 
   return (
@@ -102,9 +103,8 @@ export default function Portfolio() {
 
       <ResponsiveMasonry columnsCountBreakPoints={{ 900: 4, 600: 3 }}>
         <Masonry gutter="10px">
-          {eval(selectedCategory)
-            .slice(0, maximumImages)
-            .map((image: ImageWithMetadata) => (
+          {selectedCategory === "snacks" &&
+            snacks.slice(0, maximumImages).map((image: ImageWithMetadata) => (
               <CloudinaryImage
                 onClick={() => {
                   setImage(image.public_id);
@@ -112,10 +112,38 @@ export default function Portfolio() {
                 }}
                 key={image.public_id}
                 public_id={image.public_id}
-                height={50}
+                alt={image.alt}
+                height={isMobile ? 200 : 300}
+              />
+            ))}
+          {selectedCategory === "anime" &&
+            anime.slice(0, maximumImages).map((image: ImageWithMetadata) => (
+              <CloudinaryImage
+                onClick={() => {
+                  setImage(image.public_id);
+                  setOpen(true);
+                }}
+                key={image.public_id}
+                public_id={image.public_id}
+                height={isMobile ? 200 : 300}
                 alt={image.alt}
               />
             ))}
+          {selectedCategory === "backgrounds" &&
+            backgrounds
+              .slice(0, maximumImages)
+              .map((image: ImageWithMetadata) => (
+                <CloudinaryImage
+                  onClick={() => {
+                    setImage(image.public_id);
+                    setOpen(true);
+                  }}
+                  key={image.public_id}
+                  public_id={image.public_id}
+                  height={isMobile ? 200 : 300}
+                  alt={image.alt}
+                />
+              ))}
         </Masonry>
       </ResponsiveMasonry>
 
@@ -132,8 +160,8 @@ export default function Portfolio() {
 
       {open && (
         <Lightbox
-          small={`https://res.cloudinary.com/${cloudName}/image/upload/${image}`}
-          large={`https://res.cloudinary.com/${cloudName}/image/upload/${image}`}
+          small={`https://res.cloudinary.com/dkhpxyxnt/image/upload/${image}`}
+          large={`https://res.cloudinary.com/dkhpxyxnt/image/upload/${image}`}
           hideDownload={true}
           hideZoom={true}
           alt={image}

@@ -18,10 +18,14 @@ const CloudinaryImage: React.FC<CloudinaryImageProps> = ({
   height,
   width,
 }) => {
-  let src = `${baseUrl}/${public_id}`;
-  if (height) src += `?h_${height}`;
-  if (width) src += `?w_${width}`;
-  return <img onClick={onClick} src={src} alt={alt || public_id} />;
+  const src = new URL(`${baseUrl}`);
+
+  if (height) src.pathname += `/h_${height}`;
+  if (width) src.pathname += `/w_${width}`;
+
+  src.pathname += `/${public_id}`;
+
+  return <img onClick={onClick} src={src.toString()} alt={alt || public_id} />;
 };
 
 export default CloudinaryImage;
