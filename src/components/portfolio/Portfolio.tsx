@@ -1,9 +1,11 @@
 import "./portfolio.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Lightbox as BaseLightbox } from "react-modal-image";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import CloudinaryImage from "../CloudinaryImage/CloudinaryImage";
 import PortfolioCategories from "../PortfolioCategories/PortfolioCategories";
+import { useCloudinaryImages } from "../../hooks/useCloudinaryImages";
+import { ImageWithMetadata } from "../../types";
 
 // TODO: fix this by installing the latest version of the types, once my PR is merged to their repo.
 const Lightbox = (
@@ -11,85 +13,45 @@ const Lightbox = (
 ) => {
   return <BaseLightbox {...props} />;
 };
-// https://cloudinary.com/documentation/list_assets
-// https://res.cloudinary.com/<your_cloud_name>/<resource_type>/list/<tag>.json
-// notes, had to allow the resource list to be public in the cloudinary console, to get this to work.
-
-type ImageWithMetadata = {
-  caption: string;
-  description: string;
-  alt: string;
-  public_id: string;
-};
-
-const parseImageData = (resource: unknown): ImageWithMetadata | undefined => {
-  if (typeof resource === "object" && resource !== null) {
-    const { caption, description, alt, public_id } = resource as {
-      caption: string;
-      description: string;
-      alt: string;
-      public_id: string;
-    };
-    return { caption, description, alt, public_id };
-  }
-  return undefined;
-};
-
-const fetchTagData = async (tag: string): Promise<ImageWithMetadata[]> => {
-  console.log("fetching data for tag", tag);
-  return fetch(`https://res.cloudinary.com/dkhpxyxnt/image/list/${tag}.json`)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      return data.resources.map((resource: unknown) => {
-        const image = parseImageData(resource);
-        if (image) {
-          return image;
-        }
-      });
-    })
-    .catch((error) => console.error("Error fetching folder images:", error));
-};
 
 export default function Portfolio() {
-  //eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [snacks, setSnacks] = useState<ImageWithMetadata[]>([]);
-  //eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [anime, setAnime] = useState<ImageWithMetadata[]>([]);
-  //eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [backgrounds, setBackgrounds] = useState<ImageWithMetadata[]>([]);
+  const tags = ["snacks", "anime", "backgrounds"];
+  const snacksImages = useCloudinaryImages("snacks");
+  const animeImages = useCloudinaryImages("anime");
+  const backgroundsImages = useCloudinaryImages("backgrounds");
 
   const [selectedCategory, setSelectedCategory] = useState<string>("snacks");
   const [maximumImages, setMaximumImages] = useState(12);
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
+  const isMobile = window.innerWidth <= 768;
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState("");
-  // const [download, setDownload] = useState(true);
 
-  const tags = ["snacks", "anime", "backgrounds"];
+  const isLoading =
+    snacksImages.loading || animeImages.loading || backgroundsImages.loading;
+  const hasError =
+    snacksImages.error || animeImages.error || backgroundsImages.error;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      tags.forEach(async (tag) => {
-        const data = await fetchTagData(tag);
-        switch (tag) {
-          case "snacks":
-            setSnacks(data);
-            break;
-          case "anime":
-            setAnime(data);
-            break;
-          case "backgrounds":
-            setBackgrounds(data);
-        }
-      });
-    };
-    fetchData();
-    setIsMobile(window.innerWidth <= 768);
-  }, []);
+  if (isLoading) return <div>Loading...</div>;
+
+  if (hasError)
+    return <div>Error: An error occurred while fetching images</div>;
+
+  // this will make the whole component re-render when the selectedCategory changes
+  const getSelectedImages = (): ImageWithMetadata[] => {
+    switch (selectedCategory) {
+      case "snacks":
+        return snacksImages.images;
+      case "anime":
+        return animeImages.images;
+      case "backgrounds":
+        return backgroundsImages.images;
+      // just to satisfy typescript
+      default:
+        return [];
+    }
+  };
+
+  const selectedImages = getSelectedImages();
 
   return (
     <section className="container">
@@ -103,8 +65,9 @@ export default function Portfolio() {
 
       <ResponsiveMasonry columnsCountBreakPoints={{ 900: 4, 600: 3 }}>
         <Masonry gutter="10px">
-          {selectedCategory === "snacks" &&
-            snacks.slice(0, maximumImages).map((image: ImageWithMetadata) => (
+          {selectedImages
+            .slice(0, maximumImages)
+            .map((image: ImageWithMetadata) => (
               <CloudinaryImage
                 onClick={() => {
                   setImage(image.public_id);
@@ -116,38 +79,10 @@ export default function Portfolio() {
                 height={isMobile ? 200 : 300}
               />
             ))}
-          {selectedCategory === "anime" &&
-            anime.slice(0, maximumImages).map((image: ImageWithMetadata) => (
-              <CloudinaryImage
-                onClick={() => {
-                  setImage(image.public_id);
-                  setOpen(true);
-                }}
-                key={image.public_id}
-                public_id={image.public_id}
-                height={isMobile ? 200 : 300}
-                alt={image.alt}
-              />
-            ))}
-          {selectedCategory === "backgrounds" &&
-            backgrounds
-              .slice(0, maximumImages)
-              .map((image: ImageWithMetadata) => (
-                <CloudinaryImage
-                  onClick={() => {
-                    setImage(image.public_id);
-                    setOpen(true);
-                  }}
-                  key={image.public_id}
-                  public_id={image.public_id}
-                  height={isMobile ? 200 : 300}
-                  alt={image.alt}
-                />
-              ))}
         </Masonry>
       </ResponsiveMasonry>
 
-      {maximumImages < eval(selectedCategory).length && (
+      {maximumImages < selectedImages.length && (
         <div className="portfolio-load-more">
           <button
             className="button"
