@@ -1,15 +1,77 @@
 $mainColor: #000000;
 
 $widthMobile: 900px;
+$widthDesktop: 1200px;
 $widthUW: 2000px;
+
+// Mixins
 @mixin mobile {
-    @media (max-width: #{$widthMobile}) {
-        @content
-    }
+	@media (max-width: #{$widthMobile}) {
+		@content
+	}
 }
 
 @mixin ultrawide {
-    @media (min-width: #{$widthUW}) {
-        @content
-    }
+	@media (min-width: #{$widthUW}) {
+		@content
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$widthDesktop}) {
+		@content
+	}
+}
+
+body {
+	max-width: 100%;
+
+	@include mobile {
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+
+}
+
+.button {
+	background-color: $mainColor;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	border: none;
+	font-size: 1rem;
+	text-transform: capitalize;
+	@include desktop {
+		font-size: 1.2rem;
+	}
+}
+
+// Styles
+.container {
+	max-width: 70%;
+	margin: 0 auto;
+
+	@include mobile {
+		max-width: 90%;
+	}
+
+	@include desktop {
+		max-width: 1200px;
+	}
+
+}
+
+section {
+	padding-top: 5vh;
+}
+
+// Global h1 styling
+h1 {
+	font-size: 3rem;
+	text-align: center;
+
+	@include mobile {
+		font-size: 2rem;
+	}
 }

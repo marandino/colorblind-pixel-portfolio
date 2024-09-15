@@ -4,14 +4,12 @@
   margin: 0;
   height: 100vh;
   flex-grow: 1;
-  overflow: auto;
 
   .sections {
     padding: 0;
     margin: 0;
     width: 100vw;
-    height: calc(100vh - 70px);
-    position: relative;
+    min-height: calc(100vh - 70px);
     top: 70px;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -22,7 +20,7 @@
 
     > * {
       width: 100vw;
-      height: calc(100vh - 70px);
+      min-height: calc(100vh - 70px);
     }
 
     .portfolio {
@@ -34,7 +32,7 @@
       top: 50px;
       > * {
         width: 100vw;
-        height: calc(100vh - 70px);
+        min-height: calc(100vh - 70px);
       }
     }
   }
