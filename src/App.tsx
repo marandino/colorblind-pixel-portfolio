@@ -1,11 +1,11 @@
-import Topbar from "./components/topbar/Topbar";
-import Menu from "./components/menu/Menu";
-import "./app.scss";
+import Topbar from "./components/Topbar";
+import Menu from "./components/Menu";
+import "./global.scss";
 import AppRouter from "./AppRouter";
 import { useState } from "react";
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);  // Added type annotation
+  const [menuOpen, setMenuOpen] = useState<boolean>(false); // Added type annotation
 
   return (
     <div className="main">

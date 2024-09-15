@@ -1,4 +1,3 @@
-import "./works.scss";
 import { useState } from "react";
 
 type SlideData = {

@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/anchor-has-content */
-import "./icon.scss";
-
 interface IntroProps {
   socialMedia: string;
   URL: string;

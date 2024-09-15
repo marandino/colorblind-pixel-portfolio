@@ -1,6 +1,5 @@
 import { useState } from "react";
-import "./contact.scss";
-import SocialMediaSection from "../socialMediaLinks/SocialMediaSection";
+import SocialMediaSection from "./socialMediaLinks/SocialMediaSection";
 
 export default function Contact() {
   const [message, setMessage] = useState<boolean>(false);
