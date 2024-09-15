@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./contact.scss";
 import SocialMediaSection from "../socialMediaLinks/SocialMediaSection";
 
 export default function Contact() {

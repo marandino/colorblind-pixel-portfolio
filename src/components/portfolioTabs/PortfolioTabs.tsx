@@ -1,5 +1,3 @@
-import "./portfolioTabs.scss";
-
 interface PortfolioListProps {
   id: string;
   title: string;

@@ -1,4 +1,3 @@
-import "./portfolio.scss";
 import { useState } from "react";
 import { Lightbox as BaseLightbox } from "react-modal-image";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";

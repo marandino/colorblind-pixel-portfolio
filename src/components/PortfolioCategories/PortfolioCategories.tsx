@@ -1,5 +1,4 @@
 import React from "react";
-import "./PortfolioCategories.scss";
 
 interface PortfolioCategoriesProps {
   categories: string[];
