@@ -1,5 +1,3 @@
-import "./testimonials.scss";
-
 type Testimonial = {
   id: number;
   name: string;

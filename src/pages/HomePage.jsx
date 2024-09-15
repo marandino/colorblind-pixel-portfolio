@@ -1,10 +1,9 @@
-import Intro from "../intro/Intro";
-import Portfolio from "./Portfolio";
-import Testimonials from "../testimonials/Testimonials";
-import Works from "../works/Works";
-import Contact from "../contact/Contact";
-import Footer from "../footer/Footer";
-import "./homePage.scss";
+import Intro from "../components/Intro";
+import Portfolio from "../components/Portfolio";
+import Testimonials from "../components/Testimonials";
+import Works from "../components/Works";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 function App() {
   return (

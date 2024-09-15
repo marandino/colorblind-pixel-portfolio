@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Lightbox as BaseLightbox } from "react-modal-image";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import CloudinaryImage from "../CloudinaryImage/CloudinaryImage";
-import PortfolioCategories from "../PortfolioCategories/PortfolioCategories";
-import { useCloudinaryImages } from "../../hooks/useCloudinaryImages";
-import { ImageWithMetadata } from "../../types";
+import CloudinaryImage from "./CloudinaryImage";
+import PortfolioCategories from "./PortfolioCategories";
+import { useCloudinaryImages } from "../hooks/useCloudinaryImages";
+import { ImageWithMetadata } from "../types";
 
 // TODO: fix this by installing the latest version of the types, once my PR is merged to their repo.
 const Lightbox = (

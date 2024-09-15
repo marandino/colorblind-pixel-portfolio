@@ -6,74 +6,72 @@ $widthUW: 2000px;
 
 // Mixins
 @mixin mobile {
-	@media (max-width: #{$widthMobile}) {
-		@content
-	}
+  @media (max-width: #{$widthMobile}) {
+    @content;
+  }
 }
 
 @mixin ultrawide {
-	@media (min-width: #{$widthUW}) {
-		@content
-	}
+  @media (min-width: #{$widthUW}) {
+    @content;
+  }
 }
 
 @mixin desktop {
-	@media (min-width: #{$widthDesktop}) {
-		@content
-	}
+  @media (min-width: #{$widthDesktop}) {
+    @content;
+  }
 }
 
 body {
-	max-width: 100%;
+  max-width: 100%;
 
-	@include mobile {
-		max-width: 100%;
-		overflow-x: hidden;
-	}
-
+  @include mobile {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }
 
 .button {
-	background-color: $mainColor;
-	color: #fff;
-	padding: 10px 20px;
-	border-radius: 5px;
-	cursor: pointer;
-	border: none;
-	font-size: 1rem;
-	text-transform: capitalize;
-	@include desktop {
-		font-size: 1.2rem;
-	}
+  background-color: $mainColor;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  text-transform: capitalize;
+  @include desktop {
+    font-size: 1.2rem;
+  }
 }
 
 // Styles
 .container {
-	max-width: 70%;
-	margin: 0 auto;
+  max-width: 70%;
+  margin: 0 auto;
 
-	@include mobile {
-		max-width: 90%;
-	}
+  @include mobile {
+    max-width: 90%;
+  }
 
-	@include desktop {
-		max-width: 1200px;
-	}
-
+  @include desktop {
+    max-width: 1200px;
+  }
 }
 
 section {
-	padding-top: 5vh;
+  padding-top: 5vh;
 }
 
 // Global h1 styling
 h1 {
-	font-size: 3rem;
-	text-align: center;
+  font-size: 3rem;
+  text-align: center;
 
-	@include mobile {
-		font-size: 2rem;
-	}
+  @include mobile {
+    font-size: 2rem;
+  }
 }
 
 // Contact
@@ -204,7 +202,6 @@ h1 {
   }
 }
 
-
 // Works
 
 .works {
@@ -220,7 +217,7 @@ h1 {
     position: absolute;
     cursor: pointer;
 
-    @include mobile{
+    @include mobile {
       display: none;
     }
 
@@ -241,8 +238,7 @@ h1 {
     left: 0;
     transition: all 1s ease-out;
 
-    
-    @include mobile{
+    @include mobile {
       height: 100vh;
       flex-direction: column;
       justify-content: center;
@@ -263,7 +259,7 @@ h1 {
         align-items: center;
         justify-content: center;
 
-        @include mobile{
+        @include mobile {
           width: 90%;
           height: 180px;
           margin: 5px 0;
@@ -346,7 +342,7 @@ h1 {
   margin: 1rem 0;
 
   .button {
-  background-color: lighten($mainColor, 35%);
+    background-color: lighten($mainColor, 35%);
     &.active {
       background-color: $mainColor;
       color: #fff;
@@ -368,12 +364,596 @@ h1 {
   cursor: pointer;
   overflow: hidden;
 
-
-  @include mobile{
+  @include mobile {
     margin: 10px;
   }
 
   &.active {
     border-bottom: 1px solid black;
+  }
+}
+
+// Footer
+footer {
+  background-color: black;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+  max-height: 150px;
+  h3 {
+    color: white;
+  }
+
+  .socialMediaLogos {
+    flex-direction: row;
+    display: flex;
+    justify-content: left;
+  }
+}
+
+// Intro
+
+.intro {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .left {
+    flex: 0.5;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+    .imgContainer {
+      width: 100vh;
+      height: 100vh;
+      background-color: black;
+      //border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0%;
+      }
+      @include ultrawide {
+        height: 100%;
+        width: 100%;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        @include mobile {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 0.5;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+
+      @include mobile {
+        padding-left: 0;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 60px;
+        margin: 10px 0;
+
+        @include mobile {
+          font-size: 40px;
+        }
+
+        @include ultrawide {
+          font-size: 150px;
+        }
+      }
+      h2 {
+        font-size: 35px;
+        @include ultrawide {
+          font-size: 60px;
+        }
+      }
+      h3 {
+        font-size: 30px;
+
+        @include mobile {
+          font-size: 20px;
+        }
+
+        @include ultrawide {
+          font-size: 60px;
+        }
+
+        span {
+          font-size: inherit;
+          color: crimson;
+        }
+
+        .ityped-cursor {
+          animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+      .socialMediaLogos {
+        padding-top: 10px;
+        flex-direction: row;
+        display: flex;
+        justify-content: left;
+      }
+    }
+    .arrow {
+      a {
+        @include mobile {
+          justify-content: center;
+          opacity: 0;
+        }
+        position: absolute;
+        bottom: 10px;
+
+        img {
+          width: 30px;
+          animation: arrowBlink 2s infinite;
+        }
+
+        @keyframes arrowBlink {
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Menu
+
+.menu {
+  width: 400px;
+  height: 100vh;
+  background-color: $mainColor;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 1s ease;
+  &.active {
+    right: 0;
+  }
+
+  ul {
+    margin-top: 8rem;
+    padding: 0;
+    list-style: none;
+    font-size: 30px;
+    font-weight: 200;
+    color: white;
+    width: 60%;
+
+    li {
+      margin-bottom: 25px;
+      a {
+        font-size: 30px;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: yellowgreen;
+      }
+    }
+  }
+}
+
+// LOGO IMAGE
+.menu img {
+  display: block;
+  margin: 5rem auto;
+}
+.menu .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ANIMATION
+.moving-image {
+  position: relative;
+  width: 200px; /* Adjust as needed */
+  animation: moveRightToLeft 5s linear infinite;
+}
+@keyframes moveRightToLeft {
+  0% {
+    left: 100%; /* Start from the right */
+  }
+  100% {
+    left: -100%; /* Move to the left */
+  }
+}
+.container {
+  overflow: hidden;
+  width: 100%;
+}
+
+// "homepage"
+.app {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  flex-grow: 1;
+
+  .sections {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    min-height: calc(100vh - 70px);
+    top: 70px;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none; //for firefox
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > * {
+      width: 100vw;
+      min-height: calc(100vh - 70px);
+    }
+
+    .portfolio {
+      height: auto;
+      padding-bottom: 30px;
+    }
+
+    @include mobile {
+      top: 50px;
+      > * {
+        width: 100vw;
+        min-height: calc(100vh - 70px);
+      }
+    }
+  }
+}
+
+// SOCIAL MEDIA LINKS
+.icon {
+  padding: 10px;
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  .fa-facebook {
+    background: #000000;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: #000000;
+    color: white;
+  }
+
+  .fa-twitter {
+    background: #000000;
+    color: white;
+  }
+}
+
+// TOPBAR
+.topbar {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  height: 70px;
+  background-color: white;
+  color: $mainColor;
+  position: fixed;
+  z-index: 1000;
+  transition: all 1s ease;
+  overflow: hidden;
+
+  @include mobile {
+    height: 50px;
+  }
+  .wrapper {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      align-items: center;
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        font-weight: 700;
+        text-decoration: none;
+        color: inherit;
+        margin-right: 40px;
+
+        @include mobile {
+          font-size: 20px;
+          margin-right: 0px;
+        }
+
+        img {
+          height: 1em;
+          margin-right: 5px;
+
+          @include mobile {
+            height: 1.5em;
+          }
+        }
+      }
+
+      .itemContainer {
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+
+        @include mobile {
+          display: none;
+        }
+        .icon {
+          font-size: 18px;
+          margin-right: 5px;
+        }
+
+        span {
+          font-size: 25px;
+          font-weight: 400;
+        }
+      }
+
+      span:hover {
+        border-bottom: 1px solid black;
+      }
+    }
+
+    button {
+      overflow: hidden;
+      width: 170px;
+      height: 40px;
+      color: white;
+      padding: 20px;
+      background-color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    button:hover {
+      background-color: crimson;
+    }
+
+    .right {
+      display: none;
+      @include mobile {
+        display: flex;
+      }
+      .hamburger {
+        width: 32px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+
+        span {
+          width: 100%;
+          height: 3px;
+          background-color: $mainColor;
+          transform-origin: left;
+          transition: all 2s ease;
+        }
+      }
+    }
+  }
+
+  &.active {
+    background-color: $mainColor;
+    color: white;
+
+    .hamburger {
+      scrollbar-width: none; //for firefox
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      span {
+        &:first-child {
+          background-color: white;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:last-child {
+          background-color: white;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+// Testimonials
+.testimonials {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mobile {
+    justify-content: space-around;
+  }
+
+  .container {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    @include mobile {
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card {
+      width: 250px;
+      height: 70%;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px -8px black;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 20px;
+      transition: all 1s ease;
+
+      @include mobile {
+        height: 180px;
+        margin: 10px 0;
+      }
+
+      &.featured {
+        width: 300px;
+        height: 75%;
+        margin: 0 30px;
+
+        @include mobile {
+          width: 250px;
+          height: 180px;
+          margin: 10px;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        img {
+          &.left,
+          &.right {
+            height: 100px;
+          }
+          &.user {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 30px;
+
+            @include mobile {
+              width: 90px;
+              height: 90px;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+
+      .center {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(250, 244, 245);
+        overflow: hidden;
+        @include mobile {
+          font-size: 12px;
+          padding: 5px;
+        }
+      }
+      .bottom {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        h3 {
+          margin-bottom: 5px;
+          overflow: hidden;
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+        h4 {
+          color: rgb(121, 115, 115);
+          @include mobile {
+            font-size: 13px;
+          }
+        }
+      }
+    }
   }
 }
