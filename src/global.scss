@@ -373,18 +373,18 @@ h1 {
   }
 }
 
-// Footer
 footer {
   background-color: black;
   color: white;
-  padding: 20px;
+  padding: 0.5rem;
   text-align: center;
 
   .footerHeaderRow {
     display: flex;
     align-items: center; // Center vertically
-    justify-content: center; // Center horizontally
+    justify-content: left; // Center horizontally
     gap: 10px; // Space between text and logo
+    margin-bottom: 2rem;
 
     p {
       font-size: 0.8rem; // Adjust text size
@@ -398,26 +398,58 @@ footer {
     }
   }
 
+  .footerContent {
+    display: flex;
+    justify-content: space-between; // Distribute columns evenly
+    flex-wrap: wrap; // Allow wrapping for smaller screens
+
+    .footerColumn {
+      flex: 0; // Make columns flexible
+      min-width: 200px; // Minimum width of each column
+      margin: 0 10px; // Space between columns
+
+      .icon a {
+        display: flex;
+        gap: 10px; // Space between icons
+        justify-content: center;
+        align-items: center;
+        font-size: 16px; // Smaller size for icons
+        color: white; // Default color for icons
+        transition: color 0.3s; // Smooth color transition
+
+        &:hover {
+          color: #ccc; // Change color on hover
+        }
+      }
+
+      h5 {
+        margin-bottom: 10px; // Space below the header
+        font-size: 1rem; // Adjust header size
+        font-weight: bold; // Make header bold
+      }
+
+      ul {
+        list-style: none; // Remove bullet points
+        padding: 0; // Remove default padding
+
+        li {
+          margin-bottom: 5px; // Space between list items
+
+          a {
+            color: white; // Default color for links
+            text-decoration: none; // Remove underline
+
+            &:hover {
+              text-decoration: underline; // Underline on hover
+            }
+          }
+        }
+      }
+    }
+  }
   .socialMediaLogos,
   .workMedia {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; // Space between icons
-    margin-top: 10px; // Space above sections
-  }
-
-  .icon a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px; // Smaller size for icons
-    color: white; // Default color for icons
-    transition: color 0.3s; // Smooth color transition
-
-    &:hover {
-      color: #ccc; // Change color on hover
-    }
   }
 }
 
