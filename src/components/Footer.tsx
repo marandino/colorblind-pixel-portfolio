@@ -8,7 +8,7 @@ export default function Footer() {
         <h2 id="footer-title">Pixel artist and automation engineer</h2>
         <img
           src="https://res.cloudinary.com/dkhpxyxnt/image/upload/c_thumb,w_35,g_face/v1726200029/zhoulogo_otm7rq.png"
-          alt="Logo de Zhou Zheng"
+          alt="Zhou Zheng Logo"
           className="logo"
         />
       </div>
@@ -18,19 +18,19 @@ export default function Footer() {
           <SocialMediaSection />
           <div className="workMedia">
             <SocialMediaIcon
-              socialMedia={"fab fa-github"}
+              socialMedia={"fa-github"}
               URL={"https://github.com/ZhouZhengCarlos"}
-              aria-label="Visita mi perfil de GitHub"
+              aria-label="Visit my GitHub profile"
             />
             <SocialMediaIcon
-              socialMedia={"fab fa-linkedin"}
+              socialMedia={"fa-linkedin"}
               URL={"https://cr.linkedin.com/in/zhouzhengcarlos/en"}
-              aria-label="Visita mi perfil de LinkedIn"
+              aria-label="Visit my LinkedIn profile"
             />
             <SocialMediaIcon
-              socialMedia={"fab fa-discord"}
-              URL={"https://discord.gg/yourdiscordserver"}
-              aria-label="Únete a mi servidor de Discord"
+              socialMedia={"fa-whatsapp"}
+              URL={"https://wa.me/50687492322"}
+              aria-label="Contact me for commissions"
             />
           </div>
         </div>
@@ -43,9 +43,9 @@ export default function Footer() {
                 href="https://wa.me/c/50687492322"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visita mi tienda en WhatsApp"
+                aria-label="Visit my WhatsApp store"
               >
-                WhatsApp
+                WhatsApp Store
               </a>
             </li>
             <li>
@@ -53,7 +53,7 @@ export default function Footer() {
                 href="https://www.instagram.com/perronstorecr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visita mi tienda en Instagram"
+                aria-label="Visit my Instagram Store"
               >
                 Instagram Store
               </a>
@@ -69,19 +69,19 @@ export default function Footer() {
                 href="https://chat.whatsapp.com/Dw1ptkbkUD8KY9KDMrMEXW"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Únete a nuestro grupo de WhatsApp"
+                aria-label="Join our WhatsApp Group"
               >
                 WhatsApp Group
               </a>
             </li>
             <li>
               <a
-                href="https://discord.gg/yourdiscordserver"
+                href="https://www.tiktok.com/@colorblindpixel"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Únete a nuestro servidor de Discord"
+                aria-label="Join our Tiktok community"
               >
-                Discord Server
+                Tiktok
               </a>
             </li>
           </ul>
@@ -96,7 +96,7 @@ export default function Footer() {
                 href="https://vozdeguanacaste.com/el-liberiano-que-mira-guanacaste-version-nintendo/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Leer sobre Carlos Zhou en Voz de Guanacaste"
+                aria-label="Read about Carlos Zhou on Voz de Guanacaste"
               >
                 Carlos Zhou, el liberiano que mira una Guanacaste en «versión
                 Nintendo»
@@ -107,7 +107,7 @@ export default function Footer() {
                 href="https://www.nacion.com/revista-dominical/reducir-costa-rica-a-pixeles-el-arte-de-colorblind/IKJL5UEWT5D65F4NZD2V4C7FKI/story/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Leer sobre el arte de Colorblind Pixel en La Nación"
+                aria-label="Read about Costa Rica's pixel art on La Nacion"
               >
                 Reducir Costa Rica a píxeles: El arte de Colorblind Pixel
               </a>
@@ -117,7 +117,7 @@ export default function Footer() {
                 href="https://www.nacion.com/tico-gamers/tendencias/tico-rescata-la-identidad-de-costa-rica-un-pixel-a/EBR65DFUYVG4BOVI7TN2SBZK5E/story/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Leer sobre cómo Carlos Zhou rescata la identidad de Costa Rica en La Nación"
+                aria-label="Read about Costa Rican identity in pixel art"
               >
                 La Nación: Tico rescata la identidad de Costa Rica un píxel a la
                 vez, ¿cómo lo hace?
@@ -128,7 +128,7 @@ export default function Footer() {
                 href="https://www.lateja.cr/tico-gamers/tendencias/tico-rescata-la-identidad-de-costa-rica-un-pixel-a/EBR65DFUYVG4BOVI7TN2SBZK5E/story/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Leer sobre el arte de píxeles en La Teja"
+                aria-label="Read about pixel art on La Teja"
               >
                 La Teja: Tico rescata la identidad de Costa Rica un píxel a la
                 vez, ¿cómo lo hace?
