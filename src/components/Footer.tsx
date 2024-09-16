@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="footerHeaderRow">
-        <p>Pixel artist and automation engineer</p>
+        <h2>Pixel artist and automation engineer</h2>
         <img
           src="https://res.cloudinary.com/dkhpxyxnt/image/upload/c_thumb,w_35,g_face/v1726200029/zhoulogo_otm7rq.png"
           alt="Menu Logo"
@@ -16,22 +16,24 @@ export default function Footer() {
       <div className="footerContent">
         <div className="footerColumn">
           <SocialMediaSection />
-          <SocialMediaIcon
-            socialMedia={"fab fa-github"}
-            URL={"https://github.com/ZhouZhengCarlos"}
-          />
-          <SocialMediaIcon
-            socialMedia={"fab fa-linkedin"}
-            URL={"https://cr.linkedin.com/in/zhouzhengcarlos/en"}
-          />
-          <SocialMediaIcon
-            socialMedia={"fab fa-discord"}
-            URL={"https://discord.gg/yourdiscordserver"}
-          />
+          <div className="workMedia">
+            <SocialMediaIcon
+              socialMedia={"fab fa-github"}
+              URL={"https://github.com/ZhouZhengCarlos"}
+            />
+            <SocialMediaIcon
+              socialMedia={"fab fa-linkedin"}
+              URL={"https://cr.linkedin.com/in/zhouzhengcarlos/en"}
+            />
+            <SocialMediaIcon
+              socialMedia={"fab fa-discord"}
+              URL={"https://discord.gg/yourdiscordserver"}
+            />
+          </div>
         </div>
 
         <div className="footerColumn">
-          <h5>You can find my merch in:</h5>
+          <h3>You can find my merch in:</h3>
           <ul>
             <li>
               <a
@@ -39,7 +41,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp Catalogo
+                WhatsApp
               </a>
             </li>
             <li>
@@ -55,7 +57,7 @@ export default function Footer() {
         </div>
 
         <div className="footerColumn">
-          <h5>Our Communities:</h5>
+          <h3>Our Communities:</h3>
           <ul>
             <li>
               <a
@@ -79,7 +81,7 @@ export default function Footer() {
         </div>
 
         <div className="footerColumn">
-          <h5>About Me:</h5>
+          <h3>About Me:</h3>
           <ul>
             <li>
               <a
