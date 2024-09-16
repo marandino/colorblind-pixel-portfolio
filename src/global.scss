@@ -373,23 +373,29 @@ h1 {
   }
 }
 
+// Footer
 footer {
   background-color: black;
   color: white;
   padding: 20px;
   text-align: center;
 
-  h3 {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-  }
-
-  .footer-content {
+  .footerHeaderRow {
     display: flex;
-    flex-direction: row; /* Align items in a row */
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Space between sections */
+    align-items: center; // Center vertically
+    justify-content: center; // Center horizontally
+    gap: 10px; // Space between text and logo
+
+    p {
+      font-size: 0.8rem; // Adjust text size
+      margin: 0; // Remove default margin
+      font-weight: bold; // Make text bold
+    }
+
+    .logo {
+      max-width: 35px; // Ensure logo is sized appropriately
+      height: auto; // Maintain aspect ratio
+    }
   }
 
   .socialMediaLogos,
@@ -397,19 +403,20 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Space between icons */
+    gap: 10px; // Space between icons
+    margin-top: 10px; // Space above sections
   }
 
   .icon a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px; /* Adjust size as needed */
-    color: white; /* Default color for icons */
-    transition: color 0.3s; /* Optional: smooth color transition */
+    font-size: 16px; // Smaller size for icons
+    color: white; // Default color for icons
+    transition: color 0.3s; // Smooth color transition
 
     &:hover {
-      color: #ccc; /* Change color on hover */
+      color: #ccc; // Change color on hover
     }
   }
 }
