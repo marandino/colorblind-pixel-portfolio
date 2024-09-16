@@ -96,7 +96,8 @@ h1 {
     }
   }
 
-  .contact-left, .contact-right {
+  .contact-left,
+  .contact-right {
     flex: 1;
     padding: 20px;
   }
@@ -112,81 +113,83 @@ h1 {
       font-size: 50px;
       margin-bottom: 15px;
     }
-      .socialMediaLogos {
-        margin-top: 10px;
-        flex-direction: row;
-        display: flex;
-        margin: 10px;
-        padding: 0;
-        .fa {
-          padding: 10px;
-          font-size: 50px;
-          width: 50px;
-          text-align: center;
-          text-decoration: none;
-          border-radius: 50%;
-        }
-      }
-    }
-    @include mobile {
-      .contact-left {
-        h2 {
-          font-size: 50px;
-          margin-bottom: 10px;
-        }
-    
-        .socialMediaLogos {
-          .fa {
-            font-size: 40px;
-            width: 40px;
-            padding: 10px;
-          }
-        }
+    .socialMediaLogos {
+      margin-top: 10px;
+      flex-direction: row;
+      display: flex;
+      margin: 10px;
+      padding: 0;
+      .fa {
+        padding: 10px;
+        font-size: 50px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
       }
     }
   }
+  @include mobile {
+    .contact-left {
+      h2 {
+        text-align: center;
+        font-size: 45px;
+        margin-bottom: 10px;
+      }
 
-  @keyframes slideImages {
-    0% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png');
-    }
-    25% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/instalogo_noscfy.jpg');
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/twitterlogo_wccyev.png');
-    }
-    75% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/whatsapplogo_vnzjlp.jpg');
-    }
-    80% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458788/emaillogo2_daaccg.jpg');
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png');
+      .socialMediaLogos {
+        .fa {
+          font-size: 3.95vh;
+          width: 4.5vh;
+          padding: 5px;
+        }
+      }
     }
   }
-  
-  .contact-right {
-    background-size: 50%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden; 
-    animation: slideImages 15s infinite;
-    transition: background-image 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+@keyframes slideImages {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png");
   }
+  25% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/instalogo_noscfy.jpg");
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/twitterlogo_wccyev.png");
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/whatsapplogo_vnzjlp.jpg");
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458788/emaillogo2_daaccg.jpg");
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png");
+  }
+}
+
+.contact-right {
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  animation: slideImages 15s infinite;
+  transition: background-image 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
 
 // Works
 
@@ -379,7 +382,7 @@ footer {
     }
 
     h2 {
-      font-size: 0.8rem;
+      font-size: 1.4vh;
       margin: 0;
       font-weight: bold;
     }
@@ -396,22 +399,22 @@ footer {
     flex-wrap: wrap; // Allow wrapping for smaller screens
     text-align: left;
     p {
-      font-size: 0.8rem;
+      font-size: 1.37vh;
       padding-bottom: 1rem;
     }
     .footerColumn {
       flex: 0;
       min-width: 200px; // Minimum width of each column
       margin: 0 10px; // Space between columns
-      .socialMediaLogos,
+      .socialMedia,
       .workMedia {
         display: flex;
       }
       .icon a {
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
-        font-size: 1rem; // Smaller size for icons
+        font-size: 1.75vh; // Smaller size for icons
         color: white; // Default color for icons
         transition: color 0.3s;
 
@@ -423,7 +426,7 @@ footer {
       h3 {
         margin-top: 1.8rem; // Space below the header
         margin-bottom: 1rem; // Space below the header
-        font-size: 0.8rem; // Adjust text size
+        font-size: 1.4vh; // Adjust text size
         font-weight: bolder; // Make header bold
       }
 
@@ -433,7 +436,7 @@ footer {
 
         li {
           margin-bottom: 1rem; // Space between list items
-          font-size: 0.7rem; // Adjust text size
+          font-size: 1.2vh; // Adjust text size
 
           a {
             color: white; // Default color for links
@@ -457,9 +460,15 @@ footer {
   background-color: white;
   display: flex;
   overflow: hidden;
+  h1 {
+    text-align: left;
+  }
 
   @include mobile {
     flex-direction: column;
+    h1 {
+      text-align: center;
+    }
   }
 
   .left {
@@ -575,7 +584,16 @@ footer {
       }
       @include mobile {
         .socialMediaLogos {
-          width: 100%;
+          margin-top: 10px;
+          margin: 10px;
+          .fa {
+            font-size: 3.36vh;
+            display: grid;
+            place-items: center; /* Centers content both vertically and horizontally */
+            width: 5vh;
+            height: 5vh;
+            padding: 0.2rem;
+          }
         }
       }
     }

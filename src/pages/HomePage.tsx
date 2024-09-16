@@ -11,8 +11,8 @@ function App() {
       <title>Colorblind Pixel</title>
       <link rel="shortcut icon" href="assets/zhoulogot.png" />
       <div className="sections">
-        <Intro className="intro" />
-        <Portfolio className="portfolio" />
+        <Intro />
+        <Portfolio />
         <Testimonials />
         <Works />
         <Contact />

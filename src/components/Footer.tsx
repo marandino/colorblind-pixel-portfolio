@@ -1,5 +1,4 @@
 import SocialMediaIcon from "./socialMediaLinks/SocialMediaIcon";
-import SocialMediaSection from "./socialMediaLinks/SocialMediaSection";
 
 export default function Footer() {
   return (
@@ -15,7 +14,23 @@ export default function Footer() {
 
       <div className="footerContent">
         <div className="footerColumn">
-          <SocialMediaSection />
+          <div className="socialMedia">
+            <SocialMediaIcon
+              socialMedia={"fa-facebook"}
+              URL={"https://www.facebook.com/ZhouIsDrawing"}
+              ariaLabel="Visit my Facebook page"
+            />
+            <SocialMediaIcon
+              socialMedia={"fa-instagram"}
+              URL={"https://www.instagram.com/colorblind_pixel/"}
+              ariaLabel="Visit my Instagram profile"
+            />
+            <SocialMediaIcon
+              socialMedia={"fa-twitter"}
+              URL={"https://twitter.com/ColorblindPixl"}
+              ariaLabel="Visit my Twitter profile"
+            />
+          </div>
           <div className="workMedia">
             <SocialMediaIcon
               socialMedia={"fa-github"}

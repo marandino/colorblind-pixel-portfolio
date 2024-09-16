@@ -21,10 +21,12 @@ export default function SocialMediaSection() {
       <SocialMediaIcon
         socialMedia={"fa-whatsapp"}
         URL={"https://wa.me/p/8347948981883474/50687492322"}
+        ariaLabel="My whatsapp contact"
       />
       <SocialMediaIcon
         socialMedia={"fa-envelope"}
         URL={"mailto:colorblindpixelzhou@gmail.com"}
+        ariaLabel="My email contact"
       />
     </div>
   );
