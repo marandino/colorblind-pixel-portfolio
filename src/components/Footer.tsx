@@ -53,7 +53,7 @@ export default function Footer() {
                 href="https://www.instagram.com/perronstorecr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visit my Instagram Store"
+                aria-label="Merch on my friend's Instagram Store"
               >
                 Instagram Store
               </a>
