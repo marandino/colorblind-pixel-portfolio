@@ -132,15 +132,16 @@ h1 {
   @include mobile {
     .contact-left {
       h2 {
-        font-size: 50px;
+        text-align: center;
+        font-size: 45px;
         margin-bottom: 10px;
       }
 
       .socialMediaLogos {
         .fa {
-          font-size: 40px;
-          width: 40px;
-          padding: 10px;
+          font-size: 2.25rem;
+          width: 4.5vh;
+          padding: 5px;
         }
       }
     }
@@ -459,9 +460,15 @@ footer {
   background-color: white;
   display: flex;
   overflow: hidden;
+  h1 {
+    text-align: left;
+  }
 
   @include mobile {
     flex-direction: column;
+    h1 {
+      text-align: center;
+    }
   }
 
   .left {
@@ -577,7 +584,16 @@ footer {
       }
       @include mobile {
         .socialMediaLogos {
-          width: 100%;
+          margin-top: 10px;
+          margin: 10px;
+          .fa {
+            font-size: 3.36vh;
+            display: grid;
+            place-items: center; /* Centers content both vertically and horizontally */
+            width: 6.45vh;
+            height: 6.45vh;
+            padding: 0.2rem;
+          }
         }
       }
     }
