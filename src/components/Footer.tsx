@@ -82,7 +82,18 @@ export default function Footer() {
 
         <div className="footerColumn">
           <h3>About Me:</h3>
+          <p>Placeholder text</p>
           <ul>
+            <li>
+              <a
+                href="https://vozdeguanacaste.com/el-liberiano-que-mira-guanacaste-version-nintendo/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Carlos Zhou, el liberiano que mira una Guanacaste en «versión
+                Nintendo»
+              </a>
+            </li>
             <li>
               <a
                 href="https://www.nacion.com/revista-dominical/reducir-costa-rica-a-pixeles-el-arte-de-colorblind/IKJL5UEWT5D65F4NZD2V4C7FKI/story/"
@@ -98,8 +109,8 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Tico rescata la identidad de Costa Rica un píxel a la vez, ¿cómo
-                lo hace?
+                La Nacion: Tico rescata la identidad de Costa Rica un píxel a la
+                vez, ¿cómo lo hace?
               </a>
             </li>
             <li>
@@ -108,18 +119,8 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Tico rescata la identidad de Costa Rica un píxel a la vez, ¿cómo
-                lo hace?
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://vozdeguanacaste.com/el-liberiano-que-mira-guanacaste-version-nintendo/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Carlos Zhou, el liberiano que mira una Guanacaste en «versión
-                Nintendo»
+                La Teja: Tico rescata la identidad de Costa Rica un píxel a la
+                vez, ¿cómo lo hace?
               </a>
             </li>
           </ul>
