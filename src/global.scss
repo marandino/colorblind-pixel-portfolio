@@ -373,24 +373,44 @@ h1 {
   }
 }
 
-// Footer
 footer {
   background-color: black;
-  flex: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 40px;
-  max-height: 150px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+
   h3 {
-    color: white;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
   }
 
-  .socialMediaLogos {
-    flex-direction: row;
+  .footer-content {
     display: flex;
-    justify-content: left;
+    flex-direction: row; /* Align items in a row */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between sections */
+  }
+
+  .socialMediaLogos,
+  .workMedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between icons */
+  }
+
+  .icon a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Adjust size as needed */
+    color: white; /* Default color for icons */
+    transition: color 0.3s; /* Optional: smooth color transition */
+
+    &:hover {
+      color: #ccc; /* Change color on hover */
+    }
   }
 }
 
