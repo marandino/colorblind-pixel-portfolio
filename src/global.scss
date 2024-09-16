@@ -414,7 +414,7 @@ footer {
       padding-bottom: 1rem;
     }
     .footerColumn {
-      flex: 0; // Make columns flexible
+      flex: 0;
       min-width: 200px; // Minimum width of each column
       margin: 0 10px; // Space between columns
       .socialMediaLogos,
@@ -427,7 +427,7 @@ footer {
         align-items: center;
         font-size: 1rem; // Smaller size for icons
         color: white; // Default color for icons
-        transition: color 0.3s; // Smooth color transition
+        transition: color 0.3s;
 
         &:hover {
           color: #ccc; // Change color on hover
@@ -435,7 +435,7 @@ footer {
       }
 
       h3 {
-        margin-top: 2rem; // Space below the header
+        margin-top: 1.8rem; // Space below the header
         margin-bottom: 1rem; // Space below the header
         font-size: 0.8rem; // Adjust text size
         font-weight: bolder; // Make header bold
