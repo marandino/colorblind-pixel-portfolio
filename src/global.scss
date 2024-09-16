@@ -96,7 +96,8 @@ h1 {
     }
   }
 
-  .contact-left, .contact-right {
+  .contact-left,
+  .contact-right {
     flex: 1;
     padding: 20px;
   }
@@ -112,81 +113,82 @@ h1 {
       font-size: 50px;
       margin-bottom: 15px;
     }
-      .socialMediaLogos {
-        margin-top: 10px;
-        flex-direction: row;
-        display: flex;
-        margin: 10px;
-        padding: 0;
-        .fa {
-          padding: 10px;
-          font-size: 50px;
-          width: 50px;
-          text-align: center;
-          text-decoration: none;
-          border-radius: 50%;
-        }
-      }
-    }
-    @include mobile {
-      .contact-left {
-        h2 {
-          font-size: 50px;
-          margin-bottom: 10px;
-        }
-    
-        .socialMediaLogos {
-          .fa {
-            font-size: 40px;
-            width: 40px;
-            padding: 10px;
-          }
-        }
+    .socialMediaLogos {
+      margin-top: 10px;
+      flex-direction: row;
+      display: flex;
+      margin: 10px;
+      padding: 0;
+      .fa {
+        padding: 10px;
+        font-size: 50px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
       }
     }
   }
+  @include mobile {
+    .contact-left {
+      h2 {
+        font-size: 50px;
+        margin-bottom: 10px;
+      }
 
-  @keyframes slideImages {
-    0% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png');
-    }
-    25% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/instalogo_noscfy.jpg');
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/twitterlogo_wccyev.png');
-    }
-    75% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/whatsapplogo_vnzjlp.jpg');
-    }
-    80% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458788/emaillogo2_daaccg.jpg');
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png');
+      .socialMediaLogos {
+        .fa {
+          font-size: 40px;
+          width: 40px;
+          padding: 10px;
+        }
+      }
     }
   }
-  
-  .contact-right {
-    background-size: 50%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden; 
-    animation: slideImages 15s infinite;
-    transition: background-image 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+@keyframes slideImages {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png");
   }
+  25% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/instalogo_noscfy.jpg");
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/twitterlogo_wccyev.png");
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/whatsapplogo_vnzjlp.jpg");
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458788/emaillogo2_daaccg.jpg");
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png");
+  }
+}
+
+.contact-right {
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  animation: slideImages 15s infinite;
+  transition: background-image 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
 
 // Works
 
@@ -403,7 +405,7 @@ footer {
       flex: 0;
       min-width: 200px; // Minimum width of each column
       margin: 0 10px; // Space between columns
-      .socialMediaLogos,
+      .socialMedia,
       .workMedia {
         display: flex;
       }

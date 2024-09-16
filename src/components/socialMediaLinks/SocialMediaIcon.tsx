@@ -1,7 +1,7 @@
 interface IntroProps {
   socialMedia: string;
   URL: string;
-  ariaLabel?: string; // Added ariaLabel for accessibility
+  ariaLabel: string; // Added ariaLabel for accessibility
 }
 
 export default function Intro({ socialMedia, URL, ariaLabel }: IntroProps) {
