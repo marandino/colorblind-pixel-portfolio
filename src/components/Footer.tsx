@@ -20,17 +20,17 @@ export default function Footer() {
             <SocialMediaIcon
               socialMedia={"fa-github"}
               URL={"https://github.com/ZhouZhengCarlos"}
-              aria-label="Visit my GitHub profile"
+              ariaLabel="Visit my GitHub profile"
             />
             <SocialMediaIcon
               socialMedia={"fa-linkedin"}
               URL={"https://cr.linkedin.com/in/zhouzhengcarlos/en"}
-              aria-label="Visit my LinkedIn profile"
+              ariaLabel="Visit my LinkedIn profile"
             />
             <SocialMediaIcon
               socialMedia={"fa-whatsapp"}
               URL={"https://wa.me/50687492322"}
-              aria-label="Contact me for commissions"
+              ariaLabel="Contact me for commissions"
             />
           </div>
         </div>
