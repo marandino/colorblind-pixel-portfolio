@@ -17,7 +17,7 @@ export default function Testimonials() {
       title: "Beverage Company",
       img:
         "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932152/3b735fd1-eb1d-4d60-9bd2-d805ec1dfdb1.png",
-      desc: "Beverage company from Coca-Cola FEMSA",
+      desc: "Beverage company from Coca-Cola FEMSA.",
     },
     {
       id: 2,
@@ -27,7 +27,6 @@ export default function Testimonials() {
         "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932135/64aaf1b4-4457-454d-b9d1-1ffebb05857a.png",
       desc:
         "Tropical is Costa Rica's top brand for Refreshing Beverages and Iced Tea.",
-      featured: true,
     },
     {
       id: 3,
@@ -37,6 +36,30 @@ export default function Testimonials() {
         "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932131/eda3d600-7499-406c-bbbb-a7648fe26d74.png",
       desc:
         "Patagonia is an Argentine beer brand owned by Patagonia Brewing Company.",
+    },
+    {
+      id: 4,
+      name: "Dos Pinos",
+      title: "Food Company",
+      img:
+        "https://res.cloudinary.com/drfhleop1/image/upload/c_thumb,w_200,g_face/v1726441082/dospinos_fltxkc.png",
+      desc: "Costa Rican cooperative producer of dairy, beverages, and candy products.",
+    },
+    {
+      id: 5,
+      name: "Heineken",
+      title: "Beverage Company",
+      img:
+        "https://res.cloudinary.com/drfhleop1/image/upload/c_thumb,w_200,g_face/v1726441082/heineken_yyegkp.png",
+      desc: "Dutch multinational brewing company.",
+    },
+    {
+      id: 6,
+      name: "Spoon",
+      title: "Bakery Company",
+      img:
+        "https://res.cloudinary.com/drfhleop1/image/upload/c_thumb,w_200,g_face/v1726441083/spoon_zqzeoy.jpg",
+      desc: "Is a Costa Rican bakery company.",
     },
   ];
 
