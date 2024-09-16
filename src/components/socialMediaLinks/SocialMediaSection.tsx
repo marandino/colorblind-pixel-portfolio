@@ -15,6 +15,14 @@ export default function SocialMediaSection() {
         socialMedia={"fa-twitter"}
         URL={"https://twitter.com/ColorblindPixl"}
       />
+      <SocialMediaIcon
+        socialMedia={"fa-whatsapp"}
+        URL={"https://wa.me/p/8347948981883474/50687492322"}
+      />
+      <SocialMediaIcon
+        socialMedia={"fa-envelope"}
+        URL={"mailto:colorblindpixelzhou@gmail.com"}
+      />
     </div>
   );
 }

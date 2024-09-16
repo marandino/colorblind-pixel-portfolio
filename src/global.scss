@@ -95,7 +95,13 @@ h1 {
       height: 100%;
     }
   }
-  .right {
+
+  .contact-left, .contact-right {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .contact-left {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -103,104 +109,84 @@ h1 {
     justify-content: center;
 
     h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
+      font-size: 50px;
+      margin-bottom: 15px;
     }
-
-    form {
-      width: 70%;
-      height: 50%;
-      flex-direction: column;
-      align-items: center;
-      border-radius: 10px;
-      box-shadow: 0px 0px 15px -8px black;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-
-      * {
-        overflow: hidden;
-      }
-
-      input {
-        width: 300px;
-        height: 30px;
-        font-size: 14px;
-        border: none;
-        border-radius: 10px;
-        background-color: rgb(238, 229, 229);
-        margin: 10px;
-        padding: 5px;
-        @include mobile {
-          width: 200px;
-          height: 20px;
-        }
-      }
-
-      textarea {
-        border: none;
-        width: 300px;
-        height: 200px;
-        font-size: 14px;
-        border-radius: 10px;
-        background-color: rgb(238, 229, 229);
-        margin: 10px;
-        padding: 5px;
-        @include mobile {
-          width: 200px;
-          height: 100px;
-        }
-      }
-
-      button {
-        overflow: hidden;
-        width: 150px;
-        height: 30px;
-        color: white;
-        background-color: rgb(0, 0, 0);
-        border: none;
-        border-radius: 10px;
-        font-weight: 500;
-        cursor: pointer;
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      button:hover {
-        background-color: crimson;
-      }
-
-      span {
-        padding-top: 20px;
-        color: green;
-      }
-
-      h3 {
-        padding-top: 20px;
-        align-items: center;
-        justify-content: center;
-      }
-
       .socialMediaLogos {
         margin-top: 10px;
         flex-direction: row;
         display: flex;
-        margin: 0;
+        margin: 10px;
         padding: 0;
         .fa {
           padding: 10px;
-          font-size: 30px;
-          width: 30px;
+          font-size: 50px;
+          width: 50px;
           text-align: center;
           text-decoration: none;
           border-radius: 50%;
         }
       }
     }
+    @include mobile {
+      .contact-left {
+        h2 {
+          font-size: 50px;
+          margin-bottom: 10px;
+        }
+    
+        .socialMediaLogos {
+          .fa {
+            font-size: 40px;
+            width: 40px;
+            padding: 10px;
+          }
+        }
+      }
+    }
   }
-}
+
+  @keyframes slideImages {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png');
+    }
+    25% {
+      opacity: 1;
+      transform: scale(1);
+      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/instalogo_noscfy.jpg');
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/twitterlogo_wccyev.png');
+    }
+    75% {
+      opacity: 1;
+      transform: scale(1);
+      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/whatsapplogo_vnzjlp.jpg');
+    }
+    80% {
+      opacity: 1;
+      transform: scale(1);
+      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458788/emaillogo2_daaccg.jpg');
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      background-image: url('https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png');
+    }
+  }
+  
+  .contact-right {
+    background-size: 50%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; 
+    animation: slideImages 15s infinite;
+    transition: background-image 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
 
 // Works
 
@@ -236,7 +222,7 @@ h1 {
     display: flex;
     position: absolute;
     left: 0;
-    transition: all 1s ease-out;
+    transition: all 0.5s ease-out;
 
     @include mobile {
       height: 100vh;
@@ -500,7 +486,7 @@ footer {
         }
 
         .ityped-cursor {
-          animation: blink 1s infinite;
+          animation: blink 0.5s infinite;
         }
 
         @keyframes blink {
@@ -517,6 +503,11 @@ footer {
         flex-direction: row;
         display: flex;
         justify-content: left;
+      }
+      @include mobile {
+        .socialMediaLogos {
+          width: 100%;
+        }
       }
     }
     .arrow {
@@ -556,7 +547,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   &.active {
     right: 0;
   }
@@ -681,6 +672,14 @@ footer {
     background: #000000;
     color: white;
   }
+  .fa-whatsapp {
+    background: #000000;
+    color: white;
+  }
+  .fa-envelope {
+    background: #000000;
+    color: white;
+  }
 }
 
 // TOPBAR
@@ -693,7 +692,7 @@ footer {
   color: $mainColor;
   position: fixed;
   z-index: 1000;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   overflow: hidden;
 
   @include mobile {
@@ -875,7 +874,7 @@ footer {
       flex-direction: column;
       justify-content: space-around;
       padding: 20px;
-      transition: all 1s ease;
+      transition: all 0.5s ease;
 
       @include mobile {
         height: 180px;
