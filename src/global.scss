@@ -398,6 +398,10 @@ footer {
     justify-content: space-evenly; // Distribute columns evenly
     flex-wrap: wrap; // Allow wrapping for smaller screens
     text-align: left;
+    @include mobile {
+      justify-content: left;
+      flex-direction: column;
+    }
 
     p {
       font-size: 1.37vh;
@@ -406,15 +410,19 @@ footer {
     .footerColumn {
       flex: 0;
       min-width: 200px; // Minimum width of each column
-      margin: 0 10px; // Space between columns
+      margin: 0 20px; // Space between columns
+
       .socialMedia,
       .workMedia {
         display: flex;
+        @include mobile {
+          justify-content: center;
+        }
       }
       .icon a {
         background: none;
-        padding-left: none;
-        margin-left: none;
+        padding: none;
+        margin: none;
         display: flex;
         justify-content: left;
         align-items: center;
