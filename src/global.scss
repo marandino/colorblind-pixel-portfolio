@@ -189,7 +189,12 @@ h1 {
   animation: slideImages 10s infinite;
   transition: background-image 1s ease-in-out, opacity 1s ease-in-out,
     transform 1s ease-in-out;
+
+    @include mobile {
+      background-size: 50%;
+    }
 }
+
 
 // Works
 
