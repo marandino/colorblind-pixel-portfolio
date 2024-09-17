@@ -190,11 +190,10 @@ h1 {
   transition: background-image 1s ease-in-out, opacity 1s ease-in-out,
     transform 1s ease-in-out;
 
-    @include mobile {
-      background-size: 50%;
-    }
+  @include mobile {
+    background-size: 50%;
+  }
 }
-
 
 // Works
 
@@ -422,19 +421,24 @@ footer {
       flex: 0;
       min-width: 200px; // Minimum width of each column
       margin: 0 20px; // Space between columns
+      .socialMedia {
+        margin-top: 1vh;
+      }
       .socialMedia,
       .workMedia {
+        justify-content: center;
         display: flex;
         @include mobile {
           justify-content: center;
         }
       }
+      .icon {
+        padding: 0;
+      }
       .icon a {
         background: none;
-        padding: none;
-        margin: none;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         font-size: 1.75vh; // Smaller size for icons
         color: white; // Default color for icons
