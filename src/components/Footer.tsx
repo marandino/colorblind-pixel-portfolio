@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="footerHeaderRow">
         <h2 id="footer-title">Pixel artist and automation engineer</h2>
         <img
-          src="https://res.cloudinary.com/dkhpxyxnt/image/upload/c_thumb,w_35,g_face/v1726200029/zhoulogo_otm7rq.png"
+          src="https://res.cloudinary.com/dkhpxyxnt/image/upload/c_thumb,w_60,g_face/v1726200029/zhoulogo_otm7rq.png"
           alt="Zhou Zheng Logo"
           className="logo"
         />
