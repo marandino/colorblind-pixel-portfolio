@@ -854,14 +854,15 @@ footer {
         @include mobile {
           display: none;
         }
-        .icon {
-          font-size: 18px;
-          margin-right: 5px;
-        }
 
         span {
           font-size: 25px;
           font-weight: 400;
+        }
+        .fa-home,
+        .fa-shopping-bag {
+          padding: 0 1vh;
+          display: inline;
         }
       }
 
