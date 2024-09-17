@@ -182,13 +182,13 @@ h1 {
 }
 
 .contact-right {
-  background-size: 50%;
+  background-size: 30%;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  animation: slideImages 15s infinite;
-  transition: background-image 0.5s ease-in-out, opacity 0.5s ease-in-out,
-    transform 0.5s ease-in-out;
+  animation: slideImages 10s infinite;
+  transition: background-image 1s ease-in-out, opacity 1s ease-in-out,
+    transform 1s ease-in-out;
 }
 
 // Works
