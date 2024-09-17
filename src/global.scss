@@ -190,11 +190,10 @@ h1 {
   transition: background-image 1s ease-in-out, opacity 1s ease-in-out,
     transform 1s ease-in-out;
 
-    @include mobile {
-      background-size: 50%;
-    }
+  @include mobile {
+    background-size: 50%;
+  }
 }
-
 
 // Works
 
@@ -371,7 +370,7 @@ h1 {
 footer {
   background-color: black;
   color: white;
-  padding: 0.5rem;
+  padding-top: 0.5rem;
   text-align: center;
 
   .footerHeaderRow {
@@ -379,11 +378,11 @@ footer {
     align-items: center; // Center vertically
     justify-content: left;
     gap: 0.3rem; // Space between text and logo
-    margin-left: 5rem;
+    margin: 0 4%;
     margin-bottom: 2rem;
     @include mobile {
-      margin-left: 0;
-      justify-content: center; // Center horizontally
+      margin: 0 20px 5vh; // Space between columns
+      justify-content: left; //todo center top or to the left
     }
 
     h2 {
@@ -393,7 +392,7 @@ footer {
     }
 
     .logo {
-      max-width: 35px; // Ensure logo is sized appropriately
+      max-width: 3.7vh; // Ensure logo is sized appropriately
       height: auto; // Maintain aspect ratio
     }
   }
@@ -403,21 +402,43 @@ footer {
     justify-content: space-evenly; // Distribute columns evenly
     flex-wrap: wrap; // Allow wrapping for smaller screens
     text-align: left;
+    @include mobile {
+      justify-content: left;
+      flex-direction: column;
+    }
+
     p {
       font-size: 1.37vh;
       padding-bottom: 1rem;
     }
+    @include mobile {
+      .footerColumn:nth-child(3) {
+        display: none;
+      }
+    }
+
     .footerColumn {
       flex: 0;
       min-width: 200px; // Minimum width of each column
-      margin: 0 10px; // Space between columns
+      margin: 0 20px; // Space between columns
+      .socialMedia {
+        margin-top: 1.4vh;
+      }
       .socialMedia,
       .workMedia {
+        justify-content: center;
         display: flex;
+        @include mobile {
+          justify-content: center;
+        }
+      }
+      .icon {
+        padding: 0;
       }
       .icon a {
+        background: none;
         display: flex;
-        justify-content: left;
+        justify-content: space-around;
         align-items: center;
         font-size: 1.75vh; // Smaller size for icons
         color: white; // Default color for icons
@@ -427,7 +448,8 @@ footer {
           color: #ccc; // Change color on hover
         }
       }
-
+      @include mobile {
+      }
       h3 {
         margin-top: 1.8rem; // Space below the header
         margin-bottom: 1rem; // Space below the header

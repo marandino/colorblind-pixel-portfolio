@@ -16,8 +16,8 @@ function App() {
         <Testimonials />
         <Works />
         <Contact />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
