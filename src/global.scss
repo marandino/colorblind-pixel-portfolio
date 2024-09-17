@@ -374,11 +374,11 @@ footer {
     align-items: center; // Center vertically
     justify-content: left;
     gap: 0.3rem; // Space between text and logo
-    margin-left: 5rem;
+    margin: 0 4%;
     margin-bottom: 2rem;
     @include mobile {
-      margin-left: 0;
-      justify-content: center; // Center horizontally
+      margin: 0 20px 5vh; // Space between columns
+      justify-content: left; //todo center top or to the left
     }
 
     h2 {
@@ -407,11 +407,16 @@ footer {
       font-size: 1.37vh;
       padding-bottom: 1rem;
     }
+    @include mobile {
+      .footerColumn:nth-child(3) {
+        display: none;
+      }
+    }
+
     .footerColumn {
       flex: 0;
       min-width: 200px; // Minimum width of each column
       margin: 0 20px; // Space between columns
-
       .socialMedia,
       .workMedia {
         display: flex;
@@ -424,7 +429,7 @@ footer {
         padding: none;
         margin: none;
         display: flex;
-        justify-content: left;
+        justify-content: space-between;
         align-items: center;
         font-size: 1.75vh; // Smaller size for icons
         color: white; // Default color for icons
@@ -434,7 +439,8 @@ footer {
           color: #ccc; // Change color on hover
         }
       }
-
+      @include mobile {
+      }
       h3 {
         margin-top: 1.8rem; // Space below the header
         margin-bottom: 1rem; // Space below the header
