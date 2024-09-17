@@ -399,16 +399,6 @@ footer {
     flex-wrap: wrap; // Allow wrapping for smaller screens
     text-align: left;
 
-    .fa {
-      background: none;
-      padding: 20px;
-      font-size: 30px;
-      width: 30px;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 50%;
-    }
-
     p {
       font-size: 1.37vh;
       padding-bottom: 1rem;
@@ -422,6 +412,9 @@ footer {
         display: flex;
       }
       .icon a {
+        background: none;
+        padding-left: none;
+        margin-left: none;
         display: flex;
         justify-content: left;
         align-items: center;
