@@ -27,7 +27,7 @@ const ShopGrid: React.FC = () => {
     
 
     return (
-        <div className="shop-container">
+        <section className="shop-container" id="shop">
             <h1>SHOP</h1>
             {loading && <p>Loading images...</p>}
             {error && <p>Error loading images: {error.message}</p>}
@@ -56,7 +56,7 @@ const ShopGrid: React.FC = () => {
                     </button>
                 )}
             </div> */}
-        </div>
+        </section>
     );
 };
 
