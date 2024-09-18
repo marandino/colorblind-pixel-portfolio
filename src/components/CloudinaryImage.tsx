@@ -5,7 +5,7 @@ const baseUrl = `https://res.cloudinary.com/${cloudName}/image/upload`;
 
 interface CloudinaryImageProps {
   public_id: string;
-  onClick: () => void;
+  onClick?: () => void;
   height?: number;
   width?: number;
   alt?: string;
