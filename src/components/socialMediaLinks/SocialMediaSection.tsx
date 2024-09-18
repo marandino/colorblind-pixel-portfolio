@@ -20,7 +20,7 @@ export default function SocialMediaSection() {
       />
       <SocialMediaIcon
         socialMedia={"fa-whatsapp"}
-        URL={"https://wa.me/p/8347948981883474/50687492322"}
+        URL={"https://wa.me/c/50687492322"}
         ariaLabel="My whatsapp contact"
       />
       <SocialMediaIcon

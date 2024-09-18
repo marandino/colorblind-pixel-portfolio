@@ -320,6 +320,82 @@ h1 {
   }
 }
 
+// SHOP
+
+.shop-container {
+  text-align: center;
+  background-color: $mainColor;
+  color: white;
+  padding-top: 5rem;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  padding-left: 15rem;
+  width: 75%;
+
+  @include mobile {
+    width: 80%;
+    padding-left: 50px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-item-name {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.button-group {
+  margin-top: 1rem;
+}
+
+.load-more,
+.load-less {
+  margin: 30px 10px;
+  padding: 10px 20px;
+  background-color: white;
+  color: $mainColor;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.load-more:hover,
+.load-less:hover {
+  background-color: crimson;
+  color: white;
+}
+
+
 // Portfolio
 
 .portfolio-load-more {

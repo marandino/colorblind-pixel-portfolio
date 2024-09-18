@@ -3,13 +3,25 @@ import { ImageWithMetadata } from '../types';
 
 const parseImageData = (resource: unknown): ImageWithMetadata | undefined => {
   if (typeof resource === 'object' && resource !== null) {
-    const { caption, description, alt, public_id } = resource as {
-      caption: string;
-      description: string;
-      alt: string;
+    const { public_id, context } = resource as {
+
       public_id: string;
+      context?: {
+        custom?: {
+          caption?: string;
+          description?: string;
+          alt?: string;
+          URL?: string;
+        }
+      }
     };
-    return { caption, description, alt, public_id };
+
+    const URL = context?.custom?.URL
+    const caption = context?.custom?.caption
+    const description = context?.custom?.description
+    const alt = context?.custom?.alt
+
+    return { caption, description, alt, public_id, URL };
   }
   return undefined;
 };
@@ -18,6 +30,7 @@ const fetchTagData = async (tag: string): Promise<ImageWithMetadata[]> => {
   try {
     const response = await fetch(`https://res.cloudinary.com/dkhpxyxnt/image/list/${tag}.json`);
     const data = await response.json();
+
     return data.resources
       .map((resource: unknown) => parseImageData(resource))
       .filter((image: ImageWithMetadata | undefined): image is ImageWithMetadata => image !== undefined);

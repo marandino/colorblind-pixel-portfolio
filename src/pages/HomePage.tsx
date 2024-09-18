@@ -1,7 +1,7 @@
 import Intro from "../components/Intro";
 import Portfolio from "../components/Portfolio";
 import Testimonials from "../components/Testimonials";
-import Works from "../components/Works";
+import ShopGrid from "../components/Shop";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -14,7 +14,7 @@ function App() {
         <Intro />
         <Portfolio />
         <Testimonials />
-        <Works />
+        <ShopGrid />
         <Contact />
       </div>
       <Footer />
