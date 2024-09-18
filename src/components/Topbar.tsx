@@ -16,22 +16,22 @@ export default function Topbar({ menuOpen, setMenuOpen }: TopbarProps) {
           </a>
           <div className="itemContainer">
             <span>
-              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              <a href="/" style={{ textDecoration: "none", color: "black" }}>
                 <i className="fa fa-home"></i>
                 Home
-              </Link>
+              </a>
             </span>
           </div>
 
           <div className="itemContainer">
             <span>
-              <Link
-                to="/shop"
+              <a
+                href="/#shop"
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <i className="fa fa-shopping-bag"></i>
                 Shop
-              </Link>
+              </a>
             </span>
           </div>
         </div>
