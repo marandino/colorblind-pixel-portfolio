@@ -1,52 +1,25 @@
-type Testimonial = {
-  id: number;
-  name: string;
-  title: string;
-  img: string;
-  desc: string;
-  featured?: boolean;
-};
+import { useCloudinaryImages } from "../hooks/useCloudinaryImages";
+import CloudinaryImage from "./CloudinaryImage";
 
-export default function Testimonials() {
-  const data: Testimonial[] = [
-    {
-      id: 1,
-      name: "Hi-C Costa Rica",
-      title: "Beverage Company",
-      img: "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932152/3b735fd1-eb1d-4d60-9bd2-d805ec1dfdb1.png",
-      desc: "Beverage company from Coca-Cola FEMSA",
-    },
-    {
-      id: 2,
-      name: "Tropical",
-      title: "Juice Company",
-      img: "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932135/64aaf1b4-4457-454d-b9d1-1ffebb05857a.png",
-      desc: "Tropical is Costa Rica's top brand for Refreshing Beverages and Iced Tea.",
-      featured: true,
-    },
-    {
-      id: 3,
-      name: "Cerveza Patagonia",
-      title: "Brewing Company",
-      img: "https://res.cloudinary.com/dkhpxyxnt/image/upload/v1725932131/eda3d600-7499-406c-bbbb-a7648fe26d74.png",
-      desc: "Patagonia is an Argentine beer brand owned by Patagonia Brewing Company.",
-    },
-  ];
+export default function Partnerships() {
+  const { images: brands, loading, error } = useCloudinaryImages("brands");
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <section className="testimonials" id="testimonials">
-      <h1>Clients</h1>
-      <div className="container">
-        {data.map((d) => (
-          <div key={d.id} className={d.featured ? "card featured" : "card"}>
-            <div className="top">
-              <img className="user" src={d.img} alt={d.name} />
-            </div>
-            <div className="center">{d.desc}</div>
-            <div className="bottom">
-              <h3>{d.name}</h3>
-              <h4>{d.title}</h4>
-            </div>
+    <section className="partners" id="partnerships">
+      <h1>Partnerships</h1>
+      <div className="partners-container">
+        {brands.map((brand) => (
+          <div className="partner-card" key={brand.public_id}>
+            <CloudinaryImage
+              public_id={brand.public_id}
+              alt={brand.alt}
+              height={100}
+            />
+            <h3 className="title">{brand.caption}</h3>
+            <p className="description">{brand.description}</p>
           </div>
         ))}
       </div>
