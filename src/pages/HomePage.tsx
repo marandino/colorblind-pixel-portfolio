@@ -1,6 +1,6 @@
 import Intro from "../components/Intro";
 import Portfolio from "../components/Portfolio";
-import Testimonials from "../components/Testimonials";
+import Partnerships from "../components/Partnerships";
 import ShopGrid from "../components/Shop";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
@@ -13,7 +13,7 @@ function App() {
       <div className="sections">
         <Intro />
         <Portfolio />
-        <Testimonials />
+        <Partnerships />
         <ShopGrid />
         <Contact />
       </div>
