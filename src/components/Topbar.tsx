@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 interface TopbarProps {
   menuOpen: boolean;
   setMenuOpen: (open: boolean) => void;
