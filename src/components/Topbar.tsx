@@ -1,9 +1,15 @@
+import useSmoothScroll from "../hooks/useSmoothScroll";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingBag, faHouse } from "@fortawesome/free-solid-svg-icons";
+
 interface TopbarProps {
   menuOpen: boolean;
   setMenuOpen: (open: boolean) => void;
 }
 
 export default function Topbar({ menuOpen, setMenuOpen }: TopbarProps) {
+  const scrollToElement = useSmoothScroll();
+
   return (
     <div className={"topbar " + (menuOpen && "active")}>
       <div className="wrapper">
@@ -12,24 +18,23 @@ export default function Topbar({ menuOpen, setMenuOpen }: TopbarProps) {
             <img src="assets/zhoulogo.png" alt="Colorblind Pixel logo" />
             Colorblind Pixel.
           </a>
-          <div className="itemContainer">
-            <span>
-              <a href="/" style={{ textDecoration: "none", color: "black" }}>
-                <i className="fa fa-home"></i>
-                Home
-              </a>
+          <div
+            className="itemContainer"
+            onClick={() => scrollToElement("home")}
+          >
+            <span className="navbar-item">
+              <FontAwesomeIcon icon={faHouse} />
+              Home
             </span>
           </div>
 
-          <div className="itemContainer">
-            <span>
-              <a
-                href="/#shop"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <i className="fa fa-shopping-bag"></i>
-                Shop
-              </a>
+          <div
+            className="itemContainer"
+            onClick={() => scrollToElement("shop")}
+          >
+            <span className="navbar-item">
+              <FontAwesomeIcon icon={faShoppingBag} />
+              Shop
             </span>
           </div>
         </div>

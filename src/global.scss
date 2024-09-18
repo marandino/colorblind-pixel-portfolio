@@ -74,6 +74,26 @@ h1 {
   }
 }
 
+// Social Media Component
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  a {
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: .7rem;
+    border-radius: 50%;
+  }
+}
+
+
+
 // Contact
 
 .contact {
@@ -887,6 +907,13 @@ footer {
   @include mobile {
     height: 50px;
   }
+
+  .navbar-item {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
+
   .wrapper {
     padding: 10px 30px;
     display: flex;
@@ -924,20 +951,15 @@ footer {
       .itemContainer {
         display: flex;
         align-items: center;
-        margin-left: 30px;
+        margin-left: 2rem;
 
         @include mobile {
           display: none;
         }
 
         span {
-          font-size: 25px;
+          font-size: 1.5rem;
           font-weight: 400;
-        }
-        .fa-home,
-        .fa-shopping-bag {
-          padding: 0 1vh;
-          display: inline;
         }
       }
 
