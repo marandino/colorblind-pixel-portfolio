@@ -16,8 +16,8 @@ function App() {
         <Testimonials />
         <ShopGrid />
         <Contact />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

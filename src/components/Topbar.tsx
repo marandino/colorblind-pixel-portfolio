@@ -17,6 +17,7 @@ export default function Topbar({ menuOpen, setMenuOpen }: TopbarProps) {
           <div className="itemContainer">
             <span>
               <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                <i className="fa fa-home"></i>
                 Home
               </Link>
             </span>
@@ -28,6 +29,7 @@ export default function Topbar({ menuOpen, setMenuOpen }: TopbarProps) {
                 to="/shop"
                 style={{ textDecoration: "none", color: "black" }}
               >
+                <i className="fa fa-shopping-bag"></i>
                 Shop
               </Link>
             </span>
