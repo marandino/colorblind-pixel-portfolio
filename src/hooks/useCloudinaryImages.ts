@@ -9,6 +9,7 @@ const parseImageData = (resource: unknown): ImageWithMetadata | undefined => {
       context?: {
         custom?: {
           caption?: string;
+          price?: string;
           description?: string;
           alt?: string;
           URL?: string;
@@ -20,8 +21,9 @@ const parseImageData = (resource: unknown): ImageWithMetadata | undefined => {
     const caption = context?.custom?.caption
     const description = context?.custom?.description
     const alt = context?.custom?.alt
+    const price = context?.custom?.price
 
-    return { caption, description, alt, public_id, URL };
+    return { caption, description, alt, public_id, URL, price };
   }
   return undefined;
 };
