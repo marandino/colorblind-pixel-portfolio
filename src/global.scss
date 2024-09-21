@@ -355,11 +355,6 @@ h1 {
   background-color: #f9f9f9;
   color: black;
   cursor: pointer;
-
-  &:hover {
-    box-shadow: 0 3px 5px -1px rgba(255, 255, 255, 0.6),
-    0 6px 10px 0 rgba(255, 255, 255, 0.5);
-  }
 }
 
 .product-image {
