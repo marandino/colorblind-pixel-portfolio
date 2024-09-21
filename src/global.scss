@@ -41,6 +41,7 @@ body {
   border: none;
   font-size: 1rem;
   text-transform: capitalize;
+
   @include desktop {
     font-size: 1.2rem;
   }
@@ -107,6 +108,7 @@ h1 {
     @include mobile {
       display: none;
     }
+
     flex: 1;
     overflow: hidden;
 
@@ -132,12 +134,14 @@ h1 {
       font-size: 50px;
       margin-bottom: 15px;
     }
+
     .socialMediaLogos {
       margin-top: 10px;
       flex-direction: row;
       display: flex;
       margin: 10px;
       padding: 0;
+
       .fa {
         padding: 10px;
         font-size: 50px;
@@ -148,6 +152,7 @@ h1 {
       }
     }
   }
+
   @include mobile {
     .contact-left {
       h2 {
@@ -173,26 +178,31 @@ h1 {
     transform: scale(1);
     background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/facebooklogo_lusuor.png");
   }
+
   25% {
     opacity: 1;
     transform: scale(1);
     background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/instalogo_noscfy.jpg");
   }
+
   50% {
     opacity: 1;
     transform: scale(1);
     background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/twitterlogo_wccyev.png");
   }
+
   75% {
     opacity: 1;
     transform: scale(1);
     background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458595/whatsapplogo_vnzjlp.jpg");
   }
+
   80% {
     opacity: 1;
     transform: scale(1);
     background-image: url("https://res.cloudinary.com/drfhleop1/image/upload/v1726458788/emaillogo2_daaccg.jpg");
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -285,11 +295,13 @@ h1 {
           justify-content: center;
           background-color: black;
           color: white;
+
           .leftContainer {
             width: 90%;
             height: 70%;
             display: flex;
             flex-direction: column;
+
             h2 {
               padding-bottom: 10px;
             }
@@ -307,12 +319,15 @@ h1 {
                 width: 25px;
               }
             }
+
             h2 {
               font-size: 20px;
             }
+
             p {
               font-size: 13px;
             }
+
             span {
               font-size: 12px;
               font-weight: 600;
@@ -321,6 +336,7 @@ h1 {
             }
           }
         }
+
         .right {
           flex: 8;
           height: 100%;
@@ -347,7 +363,7 @@ h1 {
   color: white;
   padding: 2rem;
   @include mobile {
-    padding: 0
+    padding: 0;
   }
 
   h1 {
@@ -369,7 +385,7 @@ h1 {
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
   @include mobile {
     grid-template-columns: repeat(2, 1fr); /* 4 columns */
-    .product-description{
+    .product-description {
       display: none;
     }
   }
@@ -378,7 +394,6 @@ h1 {
     gap: 0.5rem;
   }
 }
-
 
 .card {
   border: 1px solid #ccc;
@@ -445,6 +460,7 @@ h1 {
 
   .button {
     background-color: lighten($mainColor, 35%);
+
     &.active {
       background-color: $mainColor;
       color: #fff;
@@ -489,6 +505,7 @@ footer {
     gap: 0.3rem; // Space between text and logo
     margin: 0 4%;
     margin-bottom: 2rem;
+
     @include mobile {
       margin: 0 20px 5vh; // Space between columns
       justify-content: left; //todo center top or to the left
@@ -511,6 +528,7 @@ footer {
     justify-content: space-evenly; // Distribute columns evenly
     flex-wrap: wrap; // Allow wrapping for smaller screens
     text-align: left;
+
     @include mobile {
       justify-content: left;
       flex-direction: column;
@@ -520,6 +538,7 @@ footer {
       font-size: 1.37vh;
       padding-bottom: 1rem;
     }
+
     @include mobile {
       .footerColumn:nth-child(3) {
         display: none;
@@ -530,20 +549,25 @@ footer {
       flex: 0;
       min-width: 200px; // Minimum width of each column
       margin: 0 20px; // Space between columns
+
       .socialMedia {
         margin-top: 1.4vh;
       }
+
       .socialMedia,
       .workMedia {
         justify-content: center;
         display: flex;
+
         @include mobile {
           justify-content: center;
         }
       }
+
       .icon {
         padding: 0;
       }
+
       .icon a {
         background: none;
         display: flex;
@@ -557,8 +581,7 @@ footer {
           color: #ccc; // Change color on hover
         }
       }
-      @include mobile {
-      }
+
       h3 {
         margin-top: 1.8rem; // Space below the header
         margin-bottom: 1rem; // Space below the header
@@ -592,16 +615,17 @@ footer {
 
 .intro {
   width: 100vw;
-  height: 100vh;
   background-color: white;
   display: flex;
   overflow: hidden;
+
   h1 {
     text-align: left;
   }
 
   @include mobile {
     flex-direction: column;
+
     h1 {
       text-align: center;
     }
@@ -629,6 +653,7 @@ footer {
         height: 100%;
         border-radius: 0%;
       }
+
       @include ultrawide {
         height: 100%;
         width: 100%;
@@ -638,6 +663,7 @@ footer {
         height: 100%;
         width: 100%;
         object-fit: cover;
+
         @include mobile {
           height: 100%;
           width: 100%;
@@ -645,12 +671,14 @@ footer {
       }
     }
   }
+
   .right {
     flex: 0.5;
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
+
     .wrapper {
       width: 100%;
       height: 100%;
@@ -677,12 +705,15 @@ footer {
           font-size: 150px;
         }
       }
+
       h2 {
         font-size: 35px;
+
         @include ultrawide {
           font-size: 60px;
         }
       }
+
       h3 {
         font-size: 30px;
 
@@ -707,25 +738,30 @@ footer {
           50% {
             opacity: 1;
           }
+
           100% {
             opacity: 0;
           }
         }
       }
+
       .socialMediaLogos {
         padding-top: 10px;
         flex-direction: row;
         display: flex;
         justify-content: left;
       }
+
       @include mobile {
         .socialMediaLogos {
           margin-top: 10px;
           margin: 10px;
+
           .fa {
             font-size: 3.36vh;
             display: grid;
-            place-items: center; /* Centers content both vertically and horizontally */
+            place-items: center;
+            /* Centers content both vertically and horizontally */
             width: 5vh;
             height: 5vh;
             padding: 0.2rem;
@@ -733,6 +769,7 @@ footer {
         }
       }
     }
+
     .arrow {
       position: absolute;
       bottom: 10px;
@@ -766,6 +803,7 @@ footer {
   flex-direction: column;
   align-items: center;
   transition: all 0.5s ease;
+
   &.active {
     right: 0;
   }
@@ -781,6 +819,7 @@ footer {
 
     li {
       margin-bottom: 25px;
+
       a {
         font-size: 30px;
         color: inherit;
@@ -799,6 +838,7 @@ footer {
   display: block;
   margin: 5rem auto;
 }
+
 .menu .image-container {
   display: flex;
   justify-content: center;
@@ -808,17 +848,23 @@ footer {
 // ANIMATION
 .moving-image {
   position: relative;
-  width: 200px; /* Adjust as needed */
+  width: 200px;
+  /* Adjust as needed */
   animation: moveRightToLeft 5s linear infinite;
 }
+
 @keyframes moveRightToLeft {
   0% {
-    left: 100%; /* Start from the right */
+    left: 100%;
+    /* Start from the right */
   }
+
   100% {
-    left: -100%; /* Move to the left */
+    left: -100%;
+    /* Move to the left */
   }
 }
+
 .container {
   overflow: hidden;
   width: 100%;
@@ -828,38 +874,12 @@ footer {
 .app {
   padding: 0;
   margin: 0;
-  height: 100vh;
   flex-grow: 1;
 
   .sections {
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    min-height: calc(100vh - 70px);
-    top: 70px;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none; //for firefox
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    > * {
-      width: 100vw;
-      min-height: calc(100vh - 70px);
-    }
-
     .portfolio {
       height: auto;
       padding-bottom: 30px;
-    }
-
-    @include mobile {
-      top: 50px;
-      > * {
-        width: 100vw;
-        min-height: calc(100vh - 70px);
-      }
     }
   }
 }
@@ -867,6 +887,7 @@ footer {
 // SOCIAL MEDIA LINKS
 .icon {
   padding: 10px;
+
   .fa {
     padding: 20px;
     font-size: 30px;
@@ -890,10 +911,12 @@ footer {
     background: #000000;
     color: white;
   }
+
   .fa-whatsapp {
     background: #000000;
     color: white;
   }
+
   .fa-envelope {
     background: #000000;
     color: white;
@@ -919,7 +942,7 @@ footer {
 
   .navbar-item {
     display: flex;
-    gap: .5rem;
+    gap: 0.5rem;
     align-items: center;
   }
 
@@ -932,6 +955,7 @@ footer {
     .left {
       display: flex;
       align-items: center;
+
       .logo {
         display: flex;
         align-items: center;
@@ -1014,9 +1038,11 @@ footer {
 
     .right {
       display: none;
+
       @include mobile {
         display: flex;
       }
+
       .hamburger {
         width: 32px;
         height: 25px;
@@ -1042,17 +1068,21 @@ footer {
 
     .hamburger {
       scrollbar-width: none; //for firefox
+
       &::-webkit-scrollbar {
         display: none;
       }
+
       span {
         &:first-child {
           background-color: white;
           transform: rotate(45deg);
         }
+
         &:nth-child(2) {
           opacity: 0;
         }
+
         &:last-child {
           background-color: white;
           transform: rotate(-45deg);
@@ -1067,9 +1097,9 @@ footer {
   text-align: center;
   min-height: 100vh;
   margin: 2rem auto;
+
   h1 {
     margin: 2rem 0;
-
   }
 }
 
@@ -1080,6 +1110,7 @@ footer {
   padding: 2rem;
   justify-content: center;
   align-items: stretch; // Changed to stretch to make children have the same height
+
   // Round everything that's inside the container
   * {
     border-radius: 10px;
@@ -1087,7 +1118,6 @@ footer {
 }
 
 .partner-card {
-
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -1100,12 +1130,11 @@ footer {
   padding: 1rem;
 
   .title {
-    margin: auto
+    margin: auto;
   }
 
   .description {
     background-color: #faf4f5;
     padding: 1rem;
   }
-
 }
