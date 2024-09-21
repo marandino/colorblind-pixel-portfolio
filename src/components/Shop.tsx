@@ -19,6 +19,8 @@ const formatPrice = (price: string) => {
 const Shop: React.FC = () => {
   const { images: products, loading, error } = useCloudinaryImages("merch");
 
+  const isMobile = window.innerWidth <= 768;
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
@@ -26,7 +28,7 @@ const Shop: React.FC = () => {
     <section className="shop-container">
       <h1>Merchandising</h1>
       <div className="shop-grid">
-        {products.map((product) => (
+        {(isMobile ? products.slice(0, 4) : products).map((product) => (
           <a
             href={product.URL}
             className="card"
@@ -39,7 +41,7 @@ const Shop: React.FC = () => {
               public_id={product.public_id}
               alt={product.alt}
               width={300}
-              height={150}
+              height={300}
             />
 
             <h3>{product.caption}</h3>
