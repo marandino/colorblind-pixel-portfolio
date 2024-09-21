@@ -25,7 +25,7 @@ const Shop: React.FC = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <section className="shop-container">
+    <section id="shop" className="shop-container">
       <h1>Merchandising</h1>
       <div className="shop-grid">
         {(isMobile ? products.slice(0, 4) : products).map((product) => (
