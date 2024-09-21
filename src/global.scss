@@ -82,17 +82,16 @@ h1 {
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
+
   a {
     text-align: center;
     text-decoration: none;
     background-color: black;
     color: white;
-    padding: .7rem;
+    padding: 0.7rem;
     border-radius: 50%;
   }
 }
-
-
 
 // Contact
 
@@ -735,23 +734,18 @@ footer {
       }
     }
     .arrow {
-      a {
-        @include mobile {
-          justify-content: center;
+      position: absolute;
+      bottom: 10px;
+      z-index: 10;
+
+      img {
+        width: 30px;
+        animation: arrowBlink 2s infinite;
+      }
+
+      @keyframes arrowBlink {
+        100% {
           opacity: 0;
-        }
-        position: absolute;
-        bottom: 10px;
-
-        img {
-          width: 30px;
-          animation: arrowBlink 2s infinite;
-        }
-
-        @keyframes arrowBlink {
-          100% {
-            opacity: 0;
-          }
         }
       }
     }
