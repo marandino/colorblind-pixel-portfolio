@@ -1,63 +1,57 @@
-// import React, { useState } from 'react';
-import CloudinaryImage from './CloudinaryImage';
-import { useCloudinaryImages } from '../hooks/useCloudinaryImages';
+import React from "react";
 
+import CloudinaryImage from "./CloudinaryImage";
+import { useCloudinaryImages } from "../hooks/useCloudinaryImages";
 
-const ShopGrid: React.FC = () => {
-    // const [visibleItems, setVisibleItems] = useState<number>(4);
-    // const [isEndOfList, setIsEndOfList] = useState<boolean>(false);
+const formatPrice = (price: string) => {
+  // prices come in as num
+  const priceNum = Number(price);
+  if (isNaN(priceNum)) {
+    return price;
+  }
 
-    const { images, loading, error } = useCloudinaryImages('merch');
-
-    // const handleLoadMore = () => {
-    //     const newVisibleCount = visibleItems + 4;
-    //     setVisibleItems(newVisibleCount);
-        
-    //     if (newVisibleCount >= images.length) {
-    //         setIsEndOfList(true);
-    //     }
-    // };
-
-    // const handleLoadLess = () => {
-    //     setVisibleItems(4);
-    //     setIsEndOfList(false);
-    // };
-
-    const isMobile = window.innerWidth <= 768;
-    
-
-    return (
-        <section className="shop-container" id="shop">
-            <h1>Merchandising</h1>
-            {loading && <p>Loading images...</p>}
-            {error && <p>Error loading images: {error.message}</p>}
-            <div className="shop-grid">
-                {/* {images.slice(0, visibleItems).map((image) => ( */}
-                {images.slice(0).map((image) => (
-                    <a href={image.URL} key={image.public_id} className="grid-item">
-                        <CloudinaryImage
-                            public_id={image.public_id}
-                            alt={image.alt || image.public_id}
-                            height={isMobile ? 300 : 600}
-                            width={isMobile ? 300 : 600}
-                        />
-                    </a>
-                ))}
-            </div>
-            {/* <div className="button-group">
-                {!isEndOfList && images.length > visibleItems && (
-                    <button className="load-more" onClick={handleLoadMore}>
-                        Load More
-                    </button>
-                )}
-                {isEndOfList && (
-                    <button className="load-less" onClick={handleLoadLess}>
-                        Load Less
-                    </button>
-                )}
-            </div> */}
-        </section>
-    );
+  return new Intl.NumberFormat("cr-CR", {
+    style: "currency",
+    currency: "CRC",
+  }).format(priceNum);
 };
 
-export default ShopGrid;
+const Shop: React.FC = () => {
+  const { images: products, loading, error } = useCloudinaryImages("merch");
+
+  const isMobile = window.innerWidth <= 768;
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+  return (
+    <section className="shop-container">
+      <h1>Merchandising</h1>
+      <div className="shop-grid">
+        {(isMobile ? products.slice(0, 4) : products).map((product) => (
+          <a
+            href={product.URL}
+            className="card"
+            key={product.public_id}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <CloudinaryImage
+              className="product-image"
+              public_id={product.public_id}
+              alt={product.alt}
+              width={300}
+              height={300}
+            />
+
+            <h3>{product.caption}</h3>
+            <p className="product-description">{product.alt}</p>
+            <p className="price">{formatPrice(product.price || "N/A")}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Shop;

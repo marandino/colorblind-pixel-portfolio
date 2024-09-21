@@ -9,6 +9,7 @@ interface CloudinaryImageProps {
   height?: number;
   width?: number;
   alt?: string;
+  className?: string;
 }
 
 const CloudinaryImage: React.FC<CloudinaryImageProps> = ({
@@ -17,6 +18,7 @@ const CloudinaryImage: React.FC<CloudinaryImageProps> = ({
   alt,
   height,
   width,
+  className,
 }) => {
   const src = new URL(`${baseUrl}`);
 
@@ -25,7 +27,14 @@ const CloudinaryImage: React.FC<CloudinaryImageProps> = ({
 
   src.pathname += `/${public_id}`;
 
-  return <img onClick={onClick} src={src.toString()} alt={alt || public_id} />;
+  return (
+    <img
+      className={className}
+      onClick={onClick}
+      src={src.toString()}
+      alt={alt || public_id}
+    />
+  );
 };
 
 export default CloudinaryImage;
