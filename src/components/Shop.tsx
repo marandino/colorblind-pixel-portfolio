@@ -39,11 +39,11 @@ const Shop: React.FC = () => {
               public_id={product.public_id}
               alt={product.alt}
               width={300}
-              height={300}
+              height={150}
             />
 
             <h3>{product.caption}</h3>
-            <p>{product.alt}</p>
+            <p className="product-description">{product.alt}</p>
             <p className="price">{formatPrice(product.price || "N/A")}</p>
           </a>
         ))}
