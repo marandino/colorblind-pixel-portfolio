@@ -35,20 +35,6 @@ export default function Menu({ menuOpen, setMenuOpen }: MenuProps) {
             className="moving-image"
           />
         </div>
-        {/* 
-        <li onClick={() => setMenuOpen(false)}>
-          <Link to="shop">Shop</Link>
-        </li>
-        <li onClick={() => setMenuOpen(false)}>
-          <a href="/#portfolio">Portfolio</a>
-        </li>
-        <li onClick={() => setMenuOpen(false)}>
-          <a href="/#testimonials">Clients</a>
-        </li>
-        <li onClick={() => setMenuOpen(false)}>
-          <a href="#works">Works</a>
-        </li>
-        */}
       </ul>
     </div>
   );
