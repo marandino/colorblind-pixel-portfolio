@@ -4,15 +4,15 @@ import { useState, useEffect } from "react";
 
 export default function Partnerships() {
   const { images: brands, loading, error } = useCloudinaryImages("brands");
-  const isMobile = window.innerWidth <= 768;
   const [brandsToShow, setBrandsToShow] = useState(4);
 
   useEffect(() => {
-    if (isMobile) {
+    if (window.innerWidth <= 768) {
       setBrandsToShow(3);
+    } else {
+      setBrandsToShow(brands.length);
     }
-    setBrandsToShow(brands.length);
-  }, [isMobile]);
+  }, [brands]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
