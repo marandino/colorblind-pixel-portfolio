@@ -75,7 +75,9 @@ export function FooterList({
       </li>
       {links.map((link) => (
         <li key={link.label}>
-          <a href={link.url}>{link.label}</a>
+          <a target="_blank" href={link.url}>
+            {link.label}
+          </a>
         </li>
       ))}
     </ul>
