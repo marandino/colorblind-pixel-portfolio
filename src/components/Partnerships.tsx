@@ -18,8 +18,8 @@ export default function Partnerships() {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <section className="partners" id="partnerships">
-      <h1>Partnerships</h1>
+    <section className="partners container" id="partnerships">
+      <h1 className="section-title">Partnerships</h1>
       <div className="partners-container">
         {brands.slice(0, brandsToShow).map((brand) => (
           <div className="partner-card" key={brand.public_id}>

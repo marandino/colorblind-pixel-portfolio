@@ -52,33 +52,20 @@ a {
   }
 }
 
-// Styles // TODO: remove this container class
 .container {
-  max-width: 70%;
-  margin: 0 auto;
-
-  @include mobile {
-    max-width: 90%;
-  }
-
-  @include desktop {
-    max-width: 1200px;
-  }
+  margin: auto;
+  padding-top: 5vh;
+  max-width: 1024px;
 }
 
-section {
-  padding: 5vh 0;
-	max-width: 1024px;
-	margin: auto;
-	&.no-container {
-		max-width: 100%;
-	}
+.section-title {
+  margin-bottom: 2rem;
 }
 
 .dark-background {
-	background-color: $mainColor;
-	color: white;
-	width: 100%;
+  background-color: $mainColor;
+  color: white;
+  width: 100%;
 }
 
 // Global h1 styling
@@ -371,16 +358,6 @@ h1 {
 // SHOP
 
 .shop-container {
-  text-align: center;
-  padding: 2rem;
-  @include mobile {
-    padding: 0;
-  }
-
-  h1 {
-    margin: 1rem auto;
-  }
-
   h3 {
     max-width: 26ch;
     text-overflow: ellipsis;
@@ -392,6 +369,7 @@ h1 {
 .shop-grid {
   margin: 0 auto;
   display: grid;
+	padding-bottom: 3rem;
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
   @include mobile {
     grid-template-columns: repeat(2, 1fr); /* 4 columns */
@@ -805,20 +783,6 @@ h1 {
   width: 100%;
 }
 
-// "homepage"
-.app {
-  padding: 0;
-  margin: 0;
-  flex-grow: 1;
-
-  .sections {
-    .portfolio {
-      height: auto;
-      padding-bottom: 30px;
-    }
-  }
-}
-
 // SOCIAL MEDIA LINKS
 .icon {
   padding: 10px;
@@ -1025,21 +989,10 @@ h1 {
 }
 
 // Partnerships
-.partners {
-  text-align: center;
-  min-height: 100vh;
-  margin: 2rem auto;
-
-  h1 {
-    margin: 2rem 0;
-  }
-}
-
 .partners-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 2rem;
   justify-content: center;
   align-items: stretch; // Changed to stretch to make children have the same height
 
