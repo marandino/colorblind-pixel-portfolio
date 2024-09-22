@@ -1,157 +1,83 @@
-import SocialMediaIcon from "./socialMediaLinks/SocialMediaIcon";
-
 export default function Footer() {
+  const footerElements = [
+    {
+      title: "Social Media",
+      links: [
+        {
+          label: "Instagram",
+          url: "https://www.instagram.com/colorblind_pixel/",
+        },
+        { label: "Twitter", url: "https://twitter.com/ColorblindPixl" },
+        { label: "GitHub", url: "https://github.com/ZhouZhengCarlos" },
+        {
+          label: "LinkedIn",
+          url: "https://cr.linkedin.com/in/zhouzhengcarlos/en",
+        },
+      ],
+    },
+
+    {
+      title: "Merchandise",
+      links: [
+        { label: "WhatsApp Store", url: "https://wa.me/c/50687492322" },
+        {
+          label: "Instagram Store",
+          url: "https://www.instagram.com/perronstorecr/",
+        },
+      ],
+    },
+
+    {
+      title: "Media Coverage",
+      links: [
+        {
+          label: "Voz de Guanacaste",
+          url: "https://vozdeguanacaste.com/el-liberiano-que-mira-guanacaste-version-nintendo/",
+        },
+        {
+          label: "La Nación",
+          url: "https://www.nacion.com/tico-gamers/tendencias/tico-rescata-la-identidad-de-costa-rica-un-pixel-a/EBR65DFUYVG4BOVI7TN2SBZK5E/story/",
+        },
+        {
+          label: "La Teja",
+          url: "https://www.lateja.cr/tico-gamers/tendencias/tico-rescata-la-identidad-de-costa-rica-un-pixel-a/EBR65DFUYVG4BOVI7TN2SBZK5E/story/",
+        },
+      ],
+    },
+  ];
+
   return (
-    <footer aria-labelledby="footer-title">
-      <div className="footerHeaderRow">
-        <h2 id="footer-title">Pixel artist and automation engineer</h2>
-        <img
-          src="https://res.cloudinary.com/dkhpxyxnt/image/upload/c_thumb,w_60,g_face/v1726200029/zhoulogo_otm7rq.png"
-          alt="Zhou Zheng Logo"
-          className="logo"
-        />
-      </div>
-
-      <div className="footerContent">
-        <div className="footerColumn">
-          <div className="socialMedia">
-            <SocialMediaIcon
-              socialMedia={"fa-facebook"}
-              URL={"https://www.facebook.com/ZhouIsDrawing"}
-              ariaLabel="Visit my Facebook page"
-            />
-            <SocialMediaIcon
-              socialMedia={"fa-instagram"}
-              URL={"https://www.instagram.com/colorblind_pixel/"}
-              ariaLabel="Visit my Instagram profile"
-            />
-            <SocialMediaIcon
-              socialMedia={"fa-twitter"}
-              URL={"https://twitter.com/ColorblindPixl"}
-              ariaLabel="Visit my Twitter profile"
-            />
-          </div>
-          <div className="workMedia">
-            <SocialMediaIcon
-              socialMedia={"fa-github"}
-              URL={"https://github.com/ZhouZhengCarlos"}
-              ariaLabel="Visit my GitHub profile"
-            />
-            <SocialMediaIcon
-              socialMedia={"fa-linkedin"}
-              URL={"https://cr.linkedin.com/in/zhouzhengcarlos/en"}
-              ariaLabel="Visit my LinkedIn profile"
-            />
-            <SocialMediaIcon
-              socialMedia={"fa-whatsapp"}
-              URL={"https://wa.me/50687492322"}
-              ariaLabel="Contact me for commissions"
-            />
-          </div>
-        </div>
-
-        <div className="footerColumn">
-          <h3>You can find my merch in:</h3>
-          <ul>
-            <li>
-              <a
-                href="https://wa.me/c/50687492322"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit my WhatsApp store"
-              >
-                WhatsApp Store
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/perronstorecr/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Merch on my friend's Instagram Store"
-              >
-                Instagram Store
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="footerColumn">
-          <h3>Our Communities:</h3>
-          <ul>
-            <li>
-              <a
-                href="https://chat.whatsapp.com/Dw1ptkbkUD8KY9KDMrMEXW"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Join our WhatsApp Group"
-              >
-                WhatsApp Group
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.tiktok.com/@colorblindpixel"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Join our Tiktok community"
-              >
-                Tiktok
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="footerColumn">
-          <h3>About Me:</h3>
-          <p>Placeholder text</p>
-          <ul>
-            <li>
-              <a
-                href="https://vozdeguanacaste.com/el-liberiano-que-mira-guanacaste-version-nintendo/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Read about Carlos Zhou on Voz de Guanacaste"
-              >
-                Carlos Zhou, el liberiano que mira una Guanacaste en «versión
-                Nintendo»
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.nacion.com/revista-dominical/reducir-costa-rica-a-pixeles-el-arte-de-colorblind/IKJL5UEWT5D65F4NZD2V4C7FKI/story/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Read about Costa Rica's pixel art on La Nacion"
-              >
-                Reducir Costa Rica a píxeles: El arte de Colorblind Pixel
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.nacion.com/tico-gamers/tendencias/tico-rescata-la-identidad-de-costa-rica-un-pixel-a/EBR65DFUYVG4BOVI7TN2SBZK5E/story/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Read about Costa Rican identity in pixel art"
-              >
-                La Nación: Tico rescata la identidad de Costa Rica un píxel a la
-                vez, ¿cómo lo hace?
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.lateja.cr/tico-gamers/tendencias/tico-rescata-la-identidad-de-costa-rica-un-pixel-a/EBR65DFUYVG4BOVI7TN2SBZK5E/story/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Read about pixel art on La Teja"
-              >
-                La Teja: Tico rescata la identidad de Costa Rica un píxel a la
-                vez, ¿cómo lo hace?
-              </a>
-            </li>
-          </ul>
-        </div>
+    <footer id="footer">
+      <div className="footer-content">
+        {footerElements.map((element) => (
+          <FooterList
+            key={element.title}
+            title={element.title}
+            links={element.links}
+          />
+        ))}
       </div>
     </footer>
+  );
+}
+
+export function FooterList({
+  title,
+  links,
+}: {
+  title: string;
+  links: { label: string; url: string }[];
+}) {
+  return (
+    <ul className="footer-list">
+      <li>
+        <h3>{title}</h3>
+      </li>
+      {links.map((link) => (
+        <li key={link.label}>
+          <a href={link.url}>{link.label}</a>
+        </li>
+      ))}
+    </ul>
   );
 }

@@ -32,6 +32,11 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .button {
   background-color: $mainColor;
   color: #fff;
@@ -491,121 +496,47 @@ h1 {
   }
 }
 
-//footer
-footer {
-  background-color: black;
+// Footer
+#footer {
+  background-color: $mainColor;
+  padding: 3rem 0;
   color: white;
-  padding-top: 0.5rem;
-  text-align: center;
-
-  .footerHeaderRow {
-    display: flex;
-    align-items: center; // Center vertically
-    justify-content: left;
-    gap: 0.3rem; // Space between text and logo
-    margin: 0 4%;
-    margin-bottom: 2rem;
-
-    @include mobile {
-      margin: 0 20px 5vh; // Space between columns
-      justify-content: left; //todo center top or to the left
-    }
-
-    h2 {
-      font-size: 1rem;
-      margin: 0;
-      font-weight: bold;
-    }
-
-    .logo {
-      max-width: 3.7vh; // Ensure logo is sized appropriately
-      height: auto; // Maintain aspect ratio
-    }
+  @include mobile {
+    margin: 0;
+    padding: 1rem 0;
   }
 
-  .footerContent {
+  .footer-content {
     display: flex;
-    justify-content: space-evenly; // Distribute columns evenly
-    flex-wrap: wrap; // Allow wrapping for smaller screens
-    text-align: left;
+    margin: 0 auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+    max-width: 786px;
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    a {
+      color: darken(white, 20%); // Slightly darkened white
+
+      &:hover {
+        color: white;
+      }
+    }
 
     @include mobile {
-      justify-content: left;
-      flex-direction: column;
-    }
-
-    p {
-      font-size: 1.37vh;
-      padding-bottom: 1rem;
-    }
-
-    @include mobile {
-      .footerColumn:nth-child(3) {
-        display: none;
-      }
-    }
-
-    .footerColumn {
-      flex: 0;
-      min-width: 200px; // Minimum width of each column
-      margin: 0 20px; // Space between columns
-
-      .socialMedia {
-        margin-top: 1.4vh;
-      }
-
-      .socialMedia,
-      .workMedia {
-        justify-content: center;
-        display: flex;
-
-        @include mobile {
-          justify-content: center;
-        }
-      }
-
-      .icon {
-        padding: 0;
-      }
-
-      .icon a {
-        background: none;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 1.75vh; // Smaller size for icons
-        color: white; // Default color for icons
-        transition: color 0.3s;
-
-        &:hover {
-          color: #ccc; // Change color on hover
-        }
-      }
-
       h3 {
-        margin-top: 1.8rem; // Space below the header
-        margin-bottom: 1rem; // Space below the header
-        font-size: 1.4vh; // Adjust text size
-        font-weight: bolder; // Make header bold
+        font-size: 1rem;
       }
 
-      ul {
-        list-style: none; // Remove bullet points
-        padding: 0; // Remove default padding
-
-        li {
-          margin-bottom: 1rem; // Space between list items
-          font-size: 1.2vh; // Adjust text size
-
-          a {
-            color: white; // Default color for links
-            text-decoration: none; // Remove underline
-
-            &:hover {
-              text-decoration: underline; // Underline on hover
-            }
-          }
-        }
+      a {
+        font-size: 0.8rem;
       }
     }
   }
