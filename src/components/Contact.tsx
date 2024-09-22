@@ -1,9 +1,8 @@
 import SocialMediaSection from "./socialMediaLinks/SocialMediaSection";
 
 export default function Contact() {
-  
   return (
-    <div className="contact" id="contact">
+    <section className="contact container" id="contact">
       <div className="contact-left">
         <h2>Contact me!</h2>
         <h3>
@@ -12,6 +11,6 @@ export default function Contact() {
         <SocialMediaSection />
       </div>
       <div className="contact-right"></div>
-    </div>
+    </section>
   );
 }

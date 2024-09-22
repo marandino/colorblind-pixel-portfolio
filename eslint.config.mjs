@@ -20,6 +20,7 @@ const config = [
     rules: {
       "react/react-in-jsx-scope": "off", //React is being passed globally, so no need to have it in scope for jsx files
       "react/no-children-prop": "off", // this one is related to redux, somehow it needs the children prop.
+      "react/jsx-no-target-blank": "off",
     },
   },
 ];

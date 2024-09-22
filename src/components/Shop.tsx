@@ -25,30 +25,32 @@ const Shop: React.FC = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <section className="shop-container">
-      <h1>Merchandising</h1>
-      <div className="shop-grid">
-        {(isMobile ? products.slice(0, 4) : products).map((product) => (
-          <a
-            href={product.URL}
-            className="card"
-            key={product.public_id}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <CloudinaryImage
-              className="product-image"
-              public_id={product.public_id}
-              alt={product.alt}
-              width={300}
-              height={300}
-            />
+    <section id="shop" className="dark-background">
+      <div className="container">
+        <h1 className="section-title">Merchandising</h1>
+        <div className="shop-grid">
+          {(isMobile ? products.slice(0, 4) : products).map((product) => (
+            <a
+              href={product.URL}
+              className="card"
+              key={product.public_id}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <CloudinaryImage
+                className="product-image"
+                public_id={product.public_id}
+                alt={product.alt}
+                width={300}
+                height={300}
+              />
 
-            <h3>{product.caption}</h3>
-            <p className="product-description">{product.alt}</p>
-            <p className="price">{formatPrice(product.price || "N/A")}</p>
-          </a>
-        ))}
+              <h3>{product.caption}</h3>
+              <p className="product-description">{product.alt}</p>
+              <p className="price">{formatPrice(product.price || "N/A")}</p>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
