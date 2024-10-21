@@ -59,6 +59,9 @@ a {
 .container {
   margin: auto;
   padding-top: 5vh;
+  @include mobile {
+    padding-top: 2rem;
+  }
   max-width: 1024px;
 }
 
