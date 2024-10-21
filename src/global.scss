@@ -50,6 +50,10 @@ a {
   @include desktop {
     font-size: 1.2rem;
   }
+
+  button {
+    display: block;
+  }
 }
 
 .container {
@@ -369,7 +373,7 @@ h1 {
 .shop-grid {
   margin: 0 auto;
   display: grid;
-	padding-bottom: 3rem;
+  padding-bottom: 3rem;
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
   @include mobile {
     grid-template-columns: repeat(2, 1fr); /* 4 columns */
@@ -425,6 +429,10 @@ h1 {
   cursor: pointer;
   font-size: 20px;
   transition: background-color 0.5s, color 0.5s;
+  &.dark {
+    color: white;
+    background-color: $mainColor;
+  }
 }
 
 .load-more:hover,
@@ -993,6 +1001,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  padding-bottom: 1rem;
   justify-content: center;
   align-items: stretch; // Changed to stretch to make children have the same height
 
@@ -1000,6 +1009,13 @@ h1 {
   * {
     border-radius: 10px;
   }
+}
+
+.load-more-section {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  width: 100%;
 }
 
 .partner-card {

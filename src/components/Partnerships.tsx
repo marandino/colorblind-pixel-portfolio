@@ -32,6 +32,8 @@ export default function Partnerships() {
             <p className="description">{brand.description}</p>
           </div>
         ))}
+      </div>
+      <div className="load-more-section">
         {brandsToShow < brands.length && (
           <button
             className="button"

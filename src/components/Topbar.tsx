@@ -37,8 +37,8 @@ export default function Topbar() {
             </span>
           </div>
         </div>
-        <button type="submit">
-          <a href="/#contact">Contact me</a>
+        <button>
+          <a href="https://wa.me/c/50687492322">Contact me</a>
         </button>
         <div className="right">
           <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
