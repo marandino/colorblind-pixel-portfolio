@@ -15,7 +15,7 @@ export default function Intro() {
         strings: ["Pixel Art", "Pixel Art Logos", "Pixel Art Animation"],
       });
     }
-  }, []);
+  }, [textRef]);
 
   return (
     <div className="intro" id="intro">
@@ -34,11 +34,6 @@ export default function Intro() {
             <span ref={textRef}></span>
           </h3>
           <SocialMediaSection />
-        </div>
-        <div className="arrow">
-          <a href="#portfolio">
-            <img src="assets/down.png" alt="" />
-          </a>
         </div>
       </div>
     </div>

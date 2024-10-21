@@ -53,7 +53,7 @@ export default function Portfolio() {
   const selectedImages = getSelectedImages();
 
   return (
-    <section className="container">
+    <section className="container" id="portfolio">
       <h1>Portfolio</h1>
 
       <PortfolioCategories
